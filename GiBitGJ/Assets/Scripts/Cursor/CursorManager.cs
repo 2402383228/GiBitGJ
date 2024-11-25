@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CursorManager : MonoBehaviour
 {
-    private Vector3 mouseWorldPos => Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x,Input.mousePosition.y,0));
+    private Vector3 mouseWorldPos => Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0));
 
     private bool canClick;
 
@@ -14,18 +14,23 @@ public class CursorManager : MonoBehaviour
 
         if (canClick && Input.GetMouseButtonDown(0))
         {
-           ClickAction(ObjectAtMousePosition().gameObject);
+            ClickAction(ObjectAtMousePosition().gameObject);
         }
     }
 
     private void ClickAction(GameObject clickObject)
     {
-        switch(clickObject.tag)
+        switch (clickObject.tag)
         {
-            case "Teleport":
+            case "Arrow":
                 var teleport = clickObject.GetComponent<Teleport>();
                 Debug.Log(teleport);
                 teleport?.TeleportToSceneArrow();
+                break;
+            case "Teleport":
+                teleport = clickObject.GetComponent<Teleport>();
+                Debug.Log(teleport);
+                teleport?.TeleportToScene();
                 break;
         }
     }
