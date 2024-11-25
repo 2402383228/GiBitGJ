@@ -2,16 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerState_Jump : PlayerState
+public class PlayerState_AirJump : PlayerState
 {
     public override void Enter()
     {
-        player.Jump();
+        player.AirJump();
+        player.canAirJump = false;
     }
 
     public override void LogicUpdate()
     {
-        if (input.stopJump || player.isFall)
+        if (player.isFall)
         {
             stateMachine.SwitchState(stateMachine.playerState_Fall);
         }

@@ -10,8 +10,11 @@ public class PlayerController : MonoBehaviour
     PlayerGroundDetector detector;
     Vector2 inputDirection;
     public bool isGrounded => detector.isGrounded;
+    public bool isFall => rb.velocity.y < 0 && !isGrounded;
     public float moveSpeed;
     public float jumpSpeed;
+    public float airJumpSpeed;
+    public bool canAirJump;
 
     void Awake()
     {
@@ -19,17 +22,6 @@ public class PlayerController : MonoBehaviour
         input = GetComponent<PlayerInput>();
         detector = GetComponentInChildren<PlayerGroundDetector>();
     }
-
-    // void FixedUpdate()
-    // {
-    //     if (input.Move) Move();
-    //     else Stop();
-    // }
-
-    // void Update()
-    // {
-    //     if (input.Jump) Jump();
-    // }
 
     void SetVelocityX(float velocityX)
     {
@@ -52,8 +44,18 @@ public class PlayerController : MonoBehaviour
         SetVelocityX(0f);
     }
 
+    public void Fall()
+    {
+        SetVelocityY(0f);
+    }
+
     public void Jump()
     {
         if (isGrounded) SetVelocityY(jumpSpeed);
+    }
+
+    public void AirJump()
+    {
+        if (!isGrounded) SetVelocityY(airJumpSpeed);
     }
 }

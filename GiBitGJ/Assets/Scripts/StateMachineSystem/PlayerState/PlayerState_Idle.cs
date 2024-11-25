@@ -7,6 +7,7 @@ public class PlayerState_Idle : PlayerState
     public override void Enter()
     {
         player.Stop();
+        player.canAirJump = true;
     }
 
     public override void LogicUpdate()

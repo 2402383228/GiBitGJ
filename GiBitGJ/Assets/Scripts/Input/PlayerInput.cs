@@ -9,6 +9,7 @@ public class PlayerInput : MonoBehaviour
     public float playerDirection;
     public bool Move => !(playerDirection == 0f);
     public bool Jump;
+    public bool stopJump;
 
     void Awake()
     {
@@ -34,5 +35,6 @@ public class PlayerInput : MonoBehaviour
         else if (inputDirection.x < 0) playerDirection = -1;
         else playerDirection = 0;
         Jump = inputActions.GamePlay.Jump.WasPerformedThisFrame();
+        stopJump = inputActions.GamePlay.Jump.WasReleasedThisFrame();
     }
 }
