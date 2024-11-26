@@ -14,7 +14,8 @@ public class InventoryManager : Singleton<InventoryManager>
         {
             itemList.Add(itemName);
 
-            //接下来写对应的UI显示
+            //UI对应显示
+            EventHandler.CallUpdateUIEvent(itemData.GetItemDetails(itemName), itemList.Count - 1);
         }
     }
 }
