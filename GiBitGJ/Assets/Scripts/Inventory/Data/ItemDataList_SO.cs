@@ -19,5 +19,5 @@ public class ItemDetails
 {
     public ItemName itemName;
 
-    public Sprite itemSprit;
+    public Sprite itemSprite;
 }
