@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Bar_Scene.unity
     guid: 56f472ef7cd948e4dbe2573b94f40f29
+  - enabled: 1
+    path: Assets/Scenes/DialogScene.unity
+    guid: 9d7b10470a5229e429f226a35389a3cd
   m_configObjects: {}
