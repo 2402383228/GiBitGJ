@@ -384,7 +384,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 000b4c748374b214fb02e0346c456054, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneFrom: red_level
+  sceneFrom: blue_level
   sceneTo: MainScene
   nowColor: red_level
   leftOrRight: 0
