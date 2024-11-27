@@ -7,6 +7,10 @@ using System.Linq;
 
 public class DialogManager : MonoBehaviour
 {
+    public Gamemaneger gamemaneger;
+
+    public Teleport teleport;
+    public ItemManager itemManager;
     public TextAsset dialogDataFile;
     public SpriteRenderer spriteLeft;
     public SpriteRenderer spriteRight;
@@ -29,7 +33,6 @@ public class DialogManager : MonoBehaviour
     void Start()
     {
         ReadText(dialogDataFile);
-        CleanImage();
         ShowDialogRow();
     }
 
@@ -60,7 +63,6 @@ public class DialogManager : MonoBehaviour
     public void ReadText(TextAsset _textAsset)
     {
         dialogRows = _textAsset.text.Split('\n');
-        Debug.Log("Read success");
     }
 
     public void ShowDialogRow()
@@ -77,6 +79,13 @@ public class DialogManager : MonoBehaviour
                 nextButton.gameObject.SetActive(true);
                 break;
             }
+            else if (cells[0] == "$" && int.Parse(cells[1]) == dialogIndex)
+            {
+                UpdateText(cells[2], cells[4]);
+                UpdateImage(cells[2], cells[3]);
+                Operate(cells[6]);
+                break;
+            }
             else if (cells[0] == "&" && int.Parse(cells[1]) == dialogIndex)
             {
                 nextButton.gameObject.SetActive(false);
@@ -85,6 +94,7 @@ public class DialogManager : MonoBehaviour
             else if (cells[0] == "END" && int.Parse(cells[1]) == dialogIndex)
             {
                 Debug.Log("Over");
+                teleport.TeleportToScene();
             }
         }
     }
@@ -120,8 +130,29 @@ public class DialogManager : MonoBehaviour
         }
     }
 
-    public void OptionEffect(string _effect, int _param, string _target)
+    public void SeeBracelet()
     {
+        itemManager.canMentionBracelet = true;
+    }
 
+    public void Operate(string operation)
+    {
+        if (operation == "看到手镯")
+        {
+            SeeBracelet();
+            dialogIndex++;
+            nextButton.gameObject.SetActive(true);
+        }
+        else if (operation == "跳转")
+        {
+            if (itemManager.isMentionBracelet)
+            {
+                dialogIndex = 16;
+            }
+            else
+            {
+                dialogIndex = 17;
+            }
+        }
     }
 }
