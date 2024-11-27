@@ -29,7 +29,7 @@ public class ItemOnDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        if (eventData.pointerCurrentRaycast.gameObject.tag == "Color")
+        if (eventData.pointerCurrentRaycast.gameObject.tag == "level")
         {
             //获取交换的颜色
             toname = eventData.pointerCurrentRaycast.gameObject.name;
