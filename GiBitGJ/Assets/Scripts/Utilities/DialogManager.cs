@@ -7,8 +7,6 @@ using System.Linq;
 
 public class DialogManager : MonoBehaviour
 {
-    public Gamemaneger gamemaneger;
-
     public Teleport teleport;
     public ItemManager itemManager;
     public TextAsset dialogDataFile;
@@ -34,6 +32,16 @@ public class DialogManager : MonoBehaviour
     {
         ReadText(dialogDataFile);
         ShowDialogRow();
+    }
+
+    void OnEnable()
+    {
+        LoadDialog();
+    }
+
+    void OnDisable()
+    {
+        SaveDialog();
     }
 
     public void UpdateText(string _name, string _text)
@@ -67,36 +75,35 @@ public class DialogManager : MonoBehaviour
 
     public void ShowDialogRow()
     {
-        for (int i = 0; i < dialogRows.Length; i++)
+        string[] cells = dialogRows[dialogIndex].Split(',');
+        if (cells[0] == "#" && int.Parse(cells[1]) == dialogIndex)
         {
-            string[] cells = dialogRows[i].Split(',');
-            if (cells[0] == "#" && int.Parse(cells[1]) == dialogIndex)
-            {
-                UpdateText(cells[2], cells[4]);
-                UpdateImage(cells[2], cells[3]);
+            UpdateText(cells[2], cells[4]);
+            UpdateImage(cells[2], cells[3]);
 
-                dialogIndex = int.Parse(cells[5]);
-                nextButton.gameObject.SetActive(true);
-                break;
-            }
-            else if (cells[0] == "$" && int.Parse(cells[1]) == dialogIndex)
-            {
-                UpdateText(cells[2], cells[4]);
-                UpdateImage(cells[2], cells[3]);
-                Operate(cells[6]);
-                break;
-            }
-            else if (cells[0] == "&" && int.Parse(cells[1]) == dialogIndex)
-            {
-                nextButton.gameObject.SetActive(false);
-                GenerateOption(i);
-            }
-            else if (cells[0] == "END" && int.Parse(cells[1]) == dialogIndex)
-            {
-                Debug.Log("Over");
-                teleport.TeleportToScene();
-            }
+            dialogIndex = int.Parse(cells[5]);
+            nextButton.gameObject.SetActive(true);
         }
+        else if (cells[0] == "$" && int.Parse(cells[1]) == dialogIndex)
+        {
+            UpdateText(cells[2], cells[4]);
+            UpdateImage(cells[2], cells[3]);
+            Operate(cells[6]);
+        }
+        else if (cells[0] == "&" && int.Parse(cells[1]) == dialogIndex)
+        {
+            nextButton.gameObject.SetActive(false);
+            GenerateOption(dialogIndex);
+        }
+        else if (cells[0] == "END" && int.Parse(cells[1]) == dialogIndex)
+        {
+            if (itemManager.isMentionBracelet == 0)
+            {
+                dialogIndex = 13;
+            }
+            teleport.TeleportToScene();
+        }
+
     }
 
     public void OnClickNext()
@@ -132,7 +139,7 @@ public class DialogManager : MonoBehaviour
 
     public void SeeBracelet()
     {
-        itemManager.canMentionBracelet = true;
+        itemManager.canMentionBracelet = 1;
     }
 
     public void Operate(string operation)
@@ -145,7 +152,7 @@ public class DialogManager : MonoBehaviour
         }
         else if (operation == "跳转")
         {
-            if (itemManager.isMentionBracelet)
+            if (itemManager.isMentionBracelet == 1)
             {
                 dialogIndex = 16;
             }
@@ -154,5 +161,15 @@ public class DialogManager : MonoBehaviour
                 dialogIndex = 17;
             }
         }
+    }
+
+    private void SaveDialog()
+    {
+        PlayerPrefs.SetInt("dialogIndex", dialogIndex - 1);
+    }
+
+    private void LoadDialog()
+    {
+        dialogIndex = PlayerPrefs.GetInt("dialogIndex", 1);
     }
 }

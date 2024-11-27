@@ -10,24 +10,32 @@ public class ItemManager : MonoBehaviour
 
     public Button mentionBraceletButton;
 
-    public bool canMentionBracelet;
-    public bool isMentionBracelet;
+    public int canMentionBracelet;
+    public int isMentionBracelet;
 
     void Start()
     {
         CloseCanvas();
-        isMentionBracelet = false;
-        canMentionBracelet = false;
+    }
+
+    void OnEnable()
+    {
+        LoadItem();
+    }
+
+    void OnDisable()
+    {
+        SaveItem();
     }
 
     public void ShowCanvas()
     {
         if (dialogManager.dialogIndex > 15)
         {
-            canMentionBracelet = false;
+            canMentionBracelet = 0;
         }
         canvas.gameObject.SetActive(true);
-        if (!canMentionBracelet) mentionBraceletButton.gameObject.SetActive(false);
+        if (canMentionBracelet == 0) mentionBraceletButton.gameObject.SetActive(false);
         else mentionBraceletButton.gameObject.SetActive(true);
     }
 
@@ -38,8 +46,21 @@ public class ItemManager : MonoBehaviour
 
     public void OnMentionBracelet()
     {
-        isMentionBracelet = true;
-        canMentionBracelet = false;
+        isMentionBracelet = 1;
+        canMentionBracelet = 0;
         CloseCanvas();
+    }
+
+    private void SaveItem()
+    {
+        PlayerPrefs.SetInt("canMentionBracelet", canMentionBracelet);
+        PlayerPrefs.SetInt("isMentionBracelet", isMentionBracelet);
+    }
+
+    private void LoadItem()
+    {
+        canMentionBracelet = PlayerPrefs.GetInt("canMentionBracelet", 0);
+        isMentionBracelet = PlayerPrefs.GetInt("isMentionBracelet", 0);
+        Debug.Log(isMentionBracelet);
     }
 }
