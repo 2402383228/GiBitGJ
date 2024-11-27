@@ -10,15 +10,17 @@ public class TransitionManager : Singleton<TransitionManager>
 
     private bool isFade;
 
-    public void Transition(string from,string to)
+    public void Transition(string from, string to)
     {
-        if(!isFade)
+        if (!isFade)
             StartCoroutine(TransitionToScene(from, to));
     }
 
     private IEnumerator TransitionToScene(string from, string to)
     {
         yield return Fade(1);
+        EventHandler.CallBeforeSceneUnloadEvent();
+
         yield return SceneManager.UnloadSceneAsync(from);
         yield return SceneManager.LoadSceneAsync(to, LoadSceneMode.Additive);
 
@@ -26,6 +28,7 @@ public class TransitionManager : Singleton<TransitionManager>
         Scene newScene = SceneManager.GetSceneAt(SceneManager.sceneCount - 1);
         SceneManager.SetActiveScene(newScene);
 
+        EventHandler.CallAfterSceneLoadedEvent();
         yield return Fade(0);
     }
 
