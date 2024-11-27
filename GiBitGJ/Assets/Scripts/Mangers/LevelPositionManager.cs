@@ -18,7 +18,7 @@ public class LevelPositionManager : MonoBehaviour
         transform.SetParent(GameObject.Find(parentName).transform);
         transform.position = transform.parent.position;
 
-        if(LevelToLevelData.boolArray[LevelToLevelData.levelToNum[objectName]] == false)
+        if(LevelToLevelData.boolArray[objectName[0] - '0'] == false)
         {
             GetComponent<Image>().sprite = falseSprite;
         }

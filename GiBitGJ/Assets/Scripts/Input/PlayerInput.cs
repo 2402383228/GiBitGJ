@@ -20,7 +20,7 @@ public class PlayerInput : MonoBehaviour
     void OnEnable()
     {
         inputActions.Enable();
-        Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.lockState = CursorLockMode.Locked;
     }
 
     void OnDisable()

@@ -37,4 +37,9 @@ public class Teleport : MonoBehaviour
     {
         TransitionManager.Instance.Transition("MainScene", "red_level");
     }
+
+    public void TeleportFormMainSceneToNowScene()
+    {
+        TransitionManager.Instance.Transition("MainScene", LevelToLevelData.nowLevel);
+    }
 }

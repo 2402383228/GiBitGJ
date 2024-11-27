@@ -9,11 +9,14 @@ public class DoorEntranceScript : MonoBehaviour
     [Space]
     public int doorLeftOrRight;
     public int doorOrder;
-    void Start()
+
+    [Space]
+    public GameObject playerPerfab;
+    private void Start()
     {
         if(LevelToLevelData.nowLevel == currentLevel && LevelToLevelData.nwDoor_n == doorLeftOrRight && LevelToLevelData.nwDoor_m == doorOrder)
         {
-            PlayerPositionManager.instance.transform.position = transform.position;
+            Instantiate(playerPerfab, transform.position, Quaternion.identity);
         }
     }
 }
