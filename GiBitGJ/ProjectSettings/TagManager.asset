@@ -9,6 +9,7 @@ TagManager:
   - Arrow
   - Item
   - level
+  - GoBackDreamScene
   layers:
   - Default
   - TransparentFX

@@ -42,4 +42,11 @@ public class Teleport : MonoBehaviour
     {
         TransitionManager.Instance.Transition("DreamScene", LevelToLevelData.nowLevel);
     }
+
+    public void TeleportToDreamScene()
+    {
+        LevelToLevelData.passFromOrigin = true;
+
+        TransitionManager.Instance.Transition(LevelToLevelData.nowLevel , "DreamScene");
+    }
 }

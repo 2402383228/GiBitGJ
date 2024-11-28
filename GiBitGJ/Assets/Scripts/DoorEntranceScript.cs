@@ -14,8 +14,9 @@ public class DoorEntranceScript : MonoBehaviour
     public GameObject playerPerfab;
     private void Start()
     {
-        if(LevelToLevelData.nowLevel == currentLevel && LevelToLevelData.nwDoor_n == doorLeftOrRight && LevelToLevelData.nwDoor_m == doorOrder)
+        if(LevelToLevelData.nowLevel == currentLevel && LevelToLevelData.nwDoor_n == doorLeftOrRight && LevelToLevelData.nwDoor_m == doorOrder && LevelToLevelData.passFromDoor)
         {
+            LevelToLevelData.passFromDoor = false;
             Instantiate(playerPerfab, transform.position, Quaternion.identity);
         }
     }
