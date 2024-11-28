@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,8 +10,16 @@ public class ItemManager : MonoBehaviour
     public Canvas canvas;
     public DialogManager dialogManager;
 
-    public Button mentionBraceletButton;
     public Button returnButtonInDialogUI;
+
+    public ItemName nowItem;
+    public Image itemImage;
+    public Button mentionButton;
+    public TMP_Text itemName;
+    public TMP_Text itemDescription;
+
+    public GameObject itemButtonPre;
+    public GameObject itemGroup;
 
     public static int canMentionBracelet;
     public static int isMentionBracelet;
@@ -19,22 +29,12 @@ public class ItemManager : MonoBehaviour
         CloseCanvas();
     }
 
-    void OnEnable()
-    {
-        LoadItem();
-    }
-
-    void OnDisable()
-    {
-        SaveItem();
-    }
-
     public void ShowCanvas()
     {
         canvas.gameObject.SetActive(true);
-        if (canMentionBracelet == 0) mentionBraceletButton.gameObject.SetActive(false);
-        else mentionBraceletButton.gameObject.SetActive(true);
-
+        nowItem = ItemName.None;
+        UpdateItem();
+        GenerateItem();
         returnButtonInDialogUI.gameObject.SetActive(false);
     }
 
@@ -45,25 +45,66 @@ public class ItemManager : MonoBehaviour
         returnButtonInDialogUI.gameObject.SetActive(true);
     }
 
-    public void OnMentionBracelet()
+    public void GenerateItem()
     {
-        isMentionBracelet = 1;
-        canMentionBracelet = 0;
+        foreach (Transform child in itemGroup.transform)
+        {
+            Destroy(child.gameObject);
+        }
+        foreach (var item in InventoryManager.itemList)
+        {
+            Debug.Log(item);
+            GameObject itemButton = Instantiate(itemButtonPre, itemGroup.transform);
+            itemButton.GetComponent<Image>().sprite = InventoryManager.Instance.itemData.GetItemDetails(item).itemSprite;
+            itemButton.GetComponent<Button>().onClick.AddListener(
+            delegate
+            {
+                OnItemClick(item);
+            });
+        }
+    }
+
+    public void UpdateItem()
+    {
+        ShowImage();
+        ShowName();
+        ShowDescription();
+        if (nowItem == ItemName.None || InventoryManager.Instance.itemData.GetItemDetails(nowItem).isGet == true)
+        {
+            mentionButton.gameObject.SetActive(false);
+        }
+        else
+        {
+            mentionButton.gameObject.SetActive(true);
+        }
+    }
+
+    void ShowImage()
+    {
+        itemImage.sprite = InventoryManager.Instance.itemData.GetItemDetails(nowItem).itemSprite;
+    }
+
+    void ShowName()
+    {
+        itemName.text = InventoryManager.Instance.itemData.GetItemDetails(nowItem).name;
+    }
+
+    void ShowDescription()
+    {
+        itemDescription.text = InventoryManager.Instance.itemData.GetItemDetails(nowItem).info;
+    }
+
+    public void OnItemClick(ItemName item)
+    {
+        nowItem = item;
+        UpdateItem();
+    }
+
+    public void OnMentionItem()
+    {
+        InventoryManager.Instance.itemData.GetItemDetails(nowItem).isGet = true;
         CloseCanvas();
         dialogManager.CloseSelection();
-        dialogManager.ShowTargetDialog();
-    }
-
-    private void SaveItem()
-    {
-        PlayerPrefs.SetInt("canMentionBracelet", canMentionBracelet);
-        PlayerPrefs.SetInt("isMentionBracelet", isMentionBracelet);
-    }
-
-    private void LoadItem()
-    {
-        canMentionBracelet = PlayerPrefs.GetInt("canMentionBracelet", 0);
-        isMentionBracelet = PlayerPrefs.GetInt("isMentionBracelet", 0);
-        Debug.Log(isMentionBracelet);
+        dialogManager.ShowTargetDialog(18);
     }
 }

@@ -7,6 +7,8 @@ using System.Linq;
 
 public class DialogManager : MonoBehaviour
 {
+    static public int dialogIndex;
+
     public Teleport teleport;
     public Canvas canvas;
     public ItemManager itemManager;
@@ -18,7 +20,6 @@ public class DialogManager : MonoBehaviour
     public TMP_Text dialogText;
     public List<Sprite> sprites = new List<Sprite>();
     Dictionary<string, Sprite> imageDic = new Dictionary<string, Sprite>();
-    public int dialogIndex;
     public string[] dialogRows;
     public Button nextButton;
     public GameObject optionButton;
@@ -30,6 +31,11 @@ public class DialogManager : MonoBehaviour
         imageDic["玩家："] = sprites[1];
     }
 
+
+    void OnEnable()
+    {
+        dialogIndex = 1;
+    }
     void Start()
     {
         ShowCanvas();
@@ -37,14 +43,9 @@ public class DialogManager : MonoBehaviour
         ShowDialogRow();
     }
 
-    void OnEnable()
-    {
-        LoadDialog();
-    }
-
     void OnDisable()
     {
-        SaveDialog();
+        dialogIndex--;
     }
 
     public void ShowCanvas()
@@ -104,11 +105,6 @@ public class DialogManager : MonoBehaviour
             UpdateImage(cells[2], cells[3]);
             Operate(cells[6]);
         }
-        else if (cells[0] == "&" && int.Parse(cells[1]) == dialogIndex)
-        {
-            nextButton.gameObject.SetActive(false);
-            GenerateOption(dialogIndex);
-        }
         else if (cells[0] == "SELECTION" && int.Parse(cells[1]) == dialogIndex)
         {
             ShowSelection();
@@ -124,54 +120,14 @@ public class DialogManager : MonoBehaviour
         ShowDialogRow();
     }
 
-    public void GenerateOption(int _index)
-    {
-        string[] cells = dialogRows[_index].Split(',');
-        if (cells[0] == "&")
-        {
-            GameObject button = Instantiate(optionButton, buttonGroup);
-            button.GetComponentInChildren<TMP_Text>().text = cells[4];
-            button.GetComponent<Button>().onClick.AddListener(
-            delegate
-            {
-                OnOptionClick(int.Parse(cells[5]));
-            });
-            GenerateOption(_index + 1);
-        }
-    }
-
-    public void OnOptionClick(int _id)
-    {
-        dialogIndex = _id;
-        ShowDialogRow();
-        for (int i = 0; i < buttonGroup.childCount; i++)
-        {
-            Destroy(buttonGroup.GetChild(i).gameObject);
-        }
-    }
-
-    public void SeeBracelet()
-    {
-        ItemManager.canMentionBracelet = 1;
-    }
-
     public void Operate(string operation)
     {
         if (operation == "看到手镯")
         {
-            SeeBracelet();
+            InventoryManager.Instance.AddItem(ItemName.Bracelet);
             dialogIndex++;
             nextButton.gameObject.SetActive(true);
         }
-    }
-    private void SaveDialog()
-    {
-        PlayerPrefs.SetInt("dialogIndex", dialogIndex - 1);
-    }
-
-    private void LoadDialog()
-    {
-        dialogIndex = PlayerPrefs.GetInt("dialogIndex", 1);
     }
 
     public void ShowSelection()
@@ -186,9 +142,9 @@ public class DialogManager : MonoBehaviour
         ShowCanvas();
     }
 
-    public void ShowTargetDialog()
+    public void ShowTargetDialog(int index)
     {
-        dialogIndex = 18;
+        dialogIndex = index;
         ShowDialogRow();
     }
 

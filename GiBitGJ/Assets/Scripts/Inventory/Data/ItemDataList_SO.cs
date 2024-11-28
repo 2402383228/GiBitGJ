@@ -18,6 +18,8 @@ public class ItemDataList_SO : ScriptableObject
 public class ItemDetails
 {
     public ItemName itemName;
-
+    public string name;
     public Sprite itemSprite;
+    public string info;
+    public bool isGet;
 }

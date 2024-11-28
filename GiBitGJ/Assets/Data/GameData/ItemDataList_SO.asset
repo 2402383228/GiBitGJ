@@ -14,4 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemDetailsList:
   - itemName: 1
-    itemSprite: {fileID: 21300000, guid: c145baf75a3ed6041b5791b75b65670e, type: 3}
+    name: Bracelet
+    itemSprite: {fileID: 21300000, guid: b3f5178b8ffe7d74ebaae1e2bd749588, type: 3}
+    info: it is a bracelet
+    isGet: 1
+  - itemName: 0
+    name: 
+    itemSprite: {fileID: 21300000, guid: d1b2c282eb3935846b501ec651f4526e, type: 3}
+    info: 
+    isGet: 1
