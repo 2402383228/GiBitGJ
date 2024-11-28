@@ -992,6 +992,52 @@ MonoBehaviour:
   doorLeftOrRight: 0
   doorOrder: 1
   playerPerfab: {fileID: 3773385964617320516, guid: f23e93a3214e046478c487d63fc4363e, type: 3}
+--- !u!1 &1052055422
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1052055424}
+  - component: {fileID: 1052055423}
+  m_Layer: 0
+  m_Name: OriginEntrance
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1052055423
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1052055422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6be16988191c24e4c9ea775a3ba02261, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentLevel: 5level
+  playerPerfab: {fileID: 3773385964617320516, guid: f23e93a3214e046478c487d63fc4363e, type: 3}
+--- !u!4 &1052055424
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1052055422}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.96, y: -3.41, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1292611902
 GameObject:
   m_ObjectHideFlags: 0
@@ -1590,7 +1636,7 @@ GameObject:
   - component: {fileID: 1613359780}
   m_Layer: 0
   m_Name: Return_Button
-  m_TagString: Teleport
+  m_TagString: GoBackDreamScene
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1895,3 +1941,4 @@ SceneRoots:
   - {fileID: 1733843138}
   - {fileID: 409474107}
   - {fileID: 1613359783}
+  - {fileID: 1052055424}

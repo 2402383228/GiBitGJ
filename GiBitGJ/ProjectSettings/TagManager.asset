@@ -10,6 +10,8 @@ TagManager:
   - Item
   - level
   - GoBackDreamScene
+  - New tag
+  - PlayerSelf
   layers:
   - Default
   - TransparentFX
