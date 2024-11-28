@@ -1448,7 +1448,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 000b4c748374b214fb02e0346c456054, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneFrom: TestScene
+  sceneFrom: Persistent
   sceneTo: TestScene
   nowColor: 
   leftOrRight: 0
@@ -2012,8 +2012,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 000b4c748374b214fb02e0346c456054, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneFrom: DreamScnene
-  sceneTo: BarScene
+  sceneFrom: DreamScene
+  sceneTo: DialogScene
   nowColor: 
   leftOrRight: 0
 --- !u!114 &1729365692

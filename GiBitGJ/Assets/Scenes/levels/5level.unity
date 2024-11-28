@@ -1608,7 +1608,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneFrom: 5level
-  sceneTo: MainScene
+  sceneTo: DreamScene
   nowColor: red_level
   leftOrRight: 0
 --- !u!61 &1613359781
