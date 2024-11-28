@@ -35,7 +35,7 @@ public class PlayerController : MonoBehaviour
 
     public void Move()
     {
-        if (input.Move) transform.localScale = new Vector3(input.playerDirection, 1f, 1f);
+        if (input.Move) transform.localScale = new Vector3(input.playerDirection, 1f, 1f) * transform.localScale.x;
         SetVelocityX(input.playerDirection * moveSpeed);
     }
 

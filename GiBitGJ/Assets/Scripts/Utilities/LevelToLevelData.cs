@@ -39,7 +39,7 @@ public class LevelToLevelData : MonoBehaviour
     private void Start()
     {
         originPosition = GetComponentInChildren<Transform>();
-        originPosition.position = new Vector3(-2.96f, -3.41f, 0);
+        originPosition.position = new Vector3(-1f, -3.41f, 0);
 
         #region stringArray¸³Öµ
         stringArray = new string[10];
