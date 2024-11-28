@@ -8,7 +8,9 @@ using System.Linq;
 public class DialogManager : MonoBehaviour
 {
     public Teleport teleport;
+    public Canvas canvas;
     public ItemManager itemManager;
+    public SelectionManager selectionManager;
     public TextAsset dialogDataFile;
     public SpriteRenderer spriteLeft;
     public SpriteRenderer spriteRight;
@@ -24,12 +26,13 @@ public class DialogManager : MonoBehaviour
 
     void Awake()
     {
-        imageDic["A"] = sprites[0];
-        imageDic["B"] = sprites[1];
+        imageDic["NPC："] = sprites[0];
+        imageDic["玩家："] = sprites[1];
     }
 
     void Start()
     {
+        ShowCanvas();
         ReadText(dialogDataFile);
         ShowDialogRow();
     }
@@ -43,6 +46,17 @@ public class DialogManager : MonoBehaviour
     {
         SaveDialog();
     }
+
+    public void ShowCanvas()
+    {
+        canvas.gameObject.SetActive(true);
+    }
+
+    public void CloseCanvas()
+    {
+        canvas.gameObject.SetActive(false); 
+    }
+
 
     public void UpdateText(string _name, string _text)
     {
@@ -58,11 +72,11 @@ public class DialogManager : MonoBehaviour
 
     public void UpdateImage(string _name, string _position)
     {
-        if (_position == "左")
+        if (_name == "NPC：")
         {
             spriteLeft.sprite = imageDic[_name];
         }
-        else if (_position == "右")
+        else if (_name == "玩家：")
         {
             spriteRight.sprite = imageDic[_name];
         }
@@ -95,15 +109,14 @@ public class DialogManager : MonoBehaviour
             nextButton.gameObject.SetActive(false);
             GenerateOption(dialogIndex);
         }
+        else if (cells[0] == "SELECTION" && int.Parse(cells[1]) == dialogIndex)
+        {
+            ShowSelection();
+        }
         else if (cells[0] == "END" && int.Parse(cells[1]) == dialogIndex)
         {
-            if (itemManager.isMentionBracelet == 0)
-            {
-                dialogIndex = 13;
-            }
             teleport.TeleportToScene();
         }
-
     }
 
     public void OnClickNext()
@@ -139,7 +152,7 @@ public class DialogManager : MonoBehaviour
 
     public void SeeBracelet()
     {
-        itemManager.canMentionBracelet = 1;
+        ItemManager.canMentionBracelet = 1;
     }
 
     public void Operate(string operation)
@@ -150,19 +163,7 @@ public class DialogManager : MonoBehaviour
             dialogIndex++;
             nextButton.gameObject.SetActive(true);
         }
-        else if (operation == "跳转")
-        {
-            if (itemManager.isMentionBracelet == 1)
-            {
-                dialogIndex = 16;
-            }
-            else
-            {
-                dialogIndex = 17;
-            }
-        }
     }
-
     private void SaveDialog()
     {
         PlayerPrefs.SetInt("dialogIndex", dialogIndex - 1);
@@ -171,5 +172,35 @@ public class DialogManager : MonoBehaviour
     private void LoadDialog()
     {
         dialogIndex = PlayerPrefs.GetInt("dialogIndex", 1);
+    }
+
+    public void ShowSelection()
+    {
+        CloseCanvas();
+        selectionManager.ShowCanvas();
+    }
+
+    public void CloseSelection()
+    {
+        selectionManager.CloseCanvas();
+        ShowCanvas();
+    }
+
+    public void ShowTargetDialog()
+    {
+        dialogIndex = 18;
+        ShowDialogRow();
+    }
+
+    public void ShowOverDialog()
+    {
+        dialogIndex = 30;
+        ShowDialogRow();
+    }
+
+    public void OnOverClick()
+    {
+        CloseSelection();
+        ShowOverDialog();
     }
 }

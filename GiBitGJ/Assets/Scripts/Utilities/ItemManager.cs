@@ -11,8 +11,8 @@ public class ItemManager : MonoBehaviour
     public Button mentionBraceletButton;
     public Button returnButtonInDialogUI;
 
-    public int canMentionBracelet;
-    public int isMentionBracelet;
+    public static int canMentionBracelet;
+    public static int isMentionBracelet;
 
     void Start()
     {
@@ -31,10 +31,6 @@ public class ItemManager : MonoBehaviour
 
     public void ShowCanvas()
     {
-        if (dialogManager.dialogIndex > 15)
-        {
-            canMentionBracelet = 0;
-        }
         canvas.gameObject.SetActive(true);
         if (canMentionBracelet == 0) mentionBraceletButton.gameObject.SetActive(false);
         else mentionBraceletButton.gameObject.SetActive(true);
@@ -54,6 +50,8 @@ public class ItemManager : MonoBehaviour
         isMentionBracelet = 1;
         canMentionBracelet = 0;
         CloseCanvas();
+        dialogManager.CloseSelection();
+        dialogManager.ShowTargetDialog();
     }
 
     private void SaveItem()

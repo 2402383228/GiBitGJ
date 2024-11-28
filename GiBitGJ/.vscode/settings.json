@@ -56,5 +56,6 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "GiBitGJ.sln"
+    "dotnet.defaultSolution": "GiBitGJ.sln",
+    "dotnet.preferCSharpExtension": true
 }
