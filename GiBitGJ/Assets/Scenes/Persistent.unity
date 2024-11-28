@@ -830,17 +830,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e27d9588545c604b96dde9531de4332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelSprite:
-  - {fileID: 0}
-  - {fileID: 21300000, guid: ff1c8a379a2bc104f98428e53acfed62, type: 3}
-  - {fileID: 21300000, guid: aa8a10ce8420552488666012ce56bfb9, type: 3}
-  - {fileID: 21300000, guid: e8438257342ec4341824c409dfbeb2f6, type: 3}
-  - {fileID: 21300000, guid: 7604a98f22747a149826035ffb04c94d, type: 3}
-  - {fileID: 21300000, guid: 2ed399c5d4393264696e8d391454ea28, type: 3}
-  - {fileID: 21300000, guid: 7aeb7b644d4f88f409eb9cc8c0b2b291, type: 3}
-  - {fileID: 21300000, guid: 6e2a6e1d6c97dfe4cbf241b23a6e736f, type: 3}
-  - {fileID: 21300000, guid: 995ab29a51667c942a919e45681c0770, type: 3}
-  - {fileID: 21300000, guid: 64e23f95649333643a2124c958be576f, type: 3}
 --- !u!4 &742025003
 Transform:
   m_ObjectHideFlags: 0

@@ -7,19 +7,24 @@ public class LevelToLevelData : MonoBehaviour
     public static string[] stringArray;
     public static bool[] boolArray;
 
-    /// <summary>
-    /// 第一序列 0是红色，1是绿色，2是蓝色
-    /// 第二序列 0是左边，1是右边
-    /// </summary>
 
+    /// <summary>
+    /// 依次为第几关，左右（0左1右），上中下三门
+    /// </summary>
+    public static bool[,,] isDoorOpened;
+
+    //这个字典用来存储关卡名字和对应的此时的位置
     public static Dictionary<string, int> levelToNum;
 
-    public static Dictionary<string, Sprite> levelToSprite;
-
-    [SerializeField] private Sprite[] levelSprite;
+    //穿越密码
+    //n是左右，m是上中下
+    public static string nowLevel = "1level";
+    public static int nwDoor_n = 0;
+    public static int nwDoor_m = 0;
 
     private void Start()
     {
+        #region stringArray赋值
         stringArray = new string[10];
 
         //初始化
@@ -32,7 +37,25 @@ public class LevelToLevelData : MonoBehaviour
         stringArray[7] = "7level";
         stringArray[8] = "8level";
         stringArray[9] = "9level";
+        #endregion
 
+        #region boolArray赋值
+        boolArray = new bool[10];
+
+        boolArray[0] = true;
+        boolArray[1] = true;
+        boolArray[2] = false;
+        boolArray[3] = true;
+        boolArray[4] = false;
+        boolArray[5] = true;
+        boolArray[6] = false;
+        boolArray[7] = false;
+        boolArray[8] = false;
+        boolArray[9] = false;
+
+        #endregion
+
+        #region levelToNum赋值
         levelToNum = new Dictionary<string, int>
         {
             {"1level",1},
@@ -45,21 +68,40 @@ public class LevelToLevelData : MonoBehaviour
             {"8level",8},
             {"9level",9}
         };
+        #endregion
 
-        levelToSprite = new Dictionary<string, Sprite>()
+        isDoorOpened = new bool[10, 2, 4];
+
+        for (int i = 0; i < 10; i++)
         {
-            {"1level",levelSprite[1]},
-            {"2level",levelSprite[2]},
-            {"3level",levelSprite[3]},
-            {"4level",levelSprite[4]},
-            {"5level",levelSprite[5]},
-            {"6level",levelSprite[6]},
-            {"7level",levelSprite[7]},
-            {"8level",levelSprite[8]},
-            {"9level",levelSprite[9]}
+            for (int j = 0; j < 2; j++)
+            {
+                for (int k = 0; k < 4; k++)
+                {
+                    isDoorOpened[i, j, k] = false;
+                }
+            }
+        }
 
-        };
+        //1level
+        isDoorOpened[1, 1, 1] = true;
+        isDoorOpened[1, 1, 3] = true;
 
+        //3level
+        isDoorOpened[3, 0, 3] = true;
+        isDoorOpened[3, 1, 2] = true;
+
+        //5level
+        isDoorOpened[5, 0, 1] = true;
+        isDoorOpened[5, 0, 2] = true;
+    }
+
+    public static bool IsDoorOpened(string level, int direction, int door)
+    {
+        //判断是否可以通过
+        int levelNum = level[0] - '0';
+
+        return isDoorOpened[levelNum, direction, door];
     }
 
     public static void Swap<T>(ref T a, ref T b)
