@@ -14,7 +14,7 @@ public class LevelToLevelData : MonoBehaviour
     public static bool[,,] isDoorOpened;
 
     /// <summary>
-    /// 依次为第几关，上下（0上1下），左右两门(1,2)
+    /// 依次为第几关，上下（0上1下），左中右两门(1,2,3)
     /// </summary>
     public static bool[,,] isWindowOpened;
 
@@ -124,29 +124,20 @@ public class LevelToLevelData : MonoBehaviour
         #endregion
 
         #region isWindowOpened赋值
-        isWindowOpened = new bool[10, 2, 3];
+        isWindowOpened = new bool[10, 2, 4];
 
         for (int i = 0;i < 10;i++)
         {
             for (int j = 0;j < 2;j++)
             {
-                for (int k = 0;k < 3;k++)
+                for (int k = 0;k < 4;k++)
                 {
                     isWindowOpened[i, j, k] = false;
                 }
             }
         }
 
-        //6level
-        isWindowOpened[6, 0, 1] = true;
 
-        //7level
-        isWindowOpened[7,0,2]=true;
-        isWindowOpened[7, 1, 1] = true;
-        isWindowOpened[7, 1, 2] = true;
-
-        //9level
-        isWindowOpened[9, 1, 2] = true;
 
         #endregion
     }
