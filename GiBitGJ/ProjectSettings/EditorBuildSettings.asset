@@ -47,4 +47,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/levels/9level.unity
     guid: 75243b5ae0a9b534b9df20dc0b5a0254
+  - enabled: 1
+    path: Assets/Scenes/BarScene.unity
+    guid: deb754f4657b14644bbd30817d31d70a
   m_configObjects: {}

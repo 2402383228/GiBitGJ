@@ -1062,7 +1062,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneFrom: BarScene
-  sceneTo: DreamScnene
+  sceneTo: DreamScene
   nowColor: 
   leftOrRight: 0
 --- !u!1 &1206015538

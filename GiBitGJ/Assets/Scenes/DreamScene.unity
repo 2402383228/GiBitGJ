@@ -1974,7 +1974,7 @@ GameObject:
   - component: {fileID: 1729365692}
   - component: {fileID: 1729365691}
   m_Layer: 5
-  m_Name: Button (Legacy) (1)
+  m_Name: BackToBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2013,7 +2013,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneFrom: DreamScene
-  sceneTo: DialogScene
+  sceneTo: BarScene
   nowColor: 
   leftOrRight: 0
 --- !u!114 &1729365692
