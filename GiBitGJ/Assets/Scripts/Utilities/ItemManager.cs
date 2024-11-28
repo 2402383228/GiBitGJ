@@ -9,6 +9,7 @@ public class ItemManager : MonoBehaviour
     public DialogManager dialogManager;
 
     public Button mentionBraceletButton;
+    public Button returnButtonInDialogUI;
 
     public int canMentionBracelet;
     public int isMentionBracelet;
@@ -37,11 +38,15 @@ public class ItemManager : MonoBehaviour
         canvas.gameObject.SetActive(true);
         if (canMentionBracelet == 0) mentionBraceletButton.gameObject.SetActive(false);
         else mentionBraceletButton.gameObject.SetActive(true);
+
+        returnButtonInDialogUI.gameObject.SetActive(false);
     }
 
     public void CloseCanvas()
     {
         canvas.gameObject.SetActive(false);
+
+        returnButtonInDialogUI.gameObject.SetActive(true);
     }
 
     public void OnMentionBracelet()

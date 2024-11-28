@@ -537,7 +537,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneFrom: DialogScene
-  sceneTo: Bar_Scene
+  sceneTo: BarScene
   nowColor: 
   leftOrRight: 0
 --- !u!1 &454871454
@@ -1181,7 +1181,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneFrom: DialogScene
-  sceneTo: Bar_Scene
+  sceneTo: BarScene
   nowColor: 
   leftOrRight: 0
 --- !u!1 &936720878
@@ -1464,7 +1464,7 @@ GameObject:
   - component: {fileID: 1104075680}
   - component: {fileID: 1104075679}
   m_Layer: 0
-  m_Name: BackGround
+  m_Name: BackGround_Dialog
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2335,6 +2335,7 @@ MonoBehaviour:
   canvas: {fileID: 2056533424}
   dialogManager: {fileID: 879012036}
   mentionBraceletButton: {fileID: 1605623908}
+  returnButtonInDialogUI: {fileID: 358936967}
   canMentionBracelet: 0
   isMentionBracelet: 0
 --- !u!1 &1999743361
