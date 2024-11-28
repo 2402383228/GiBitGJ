@@ -2,13 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DoorExitScript : MonoBehaviour
+public class WindowExitScript : MonoBehaviour
 {
     public string currentLevel;
 
     [Space]
-    public int doorLeftOrRight;
-    public int doorOrder;
+    public int windowOnOrUnder;
+    public int windowOrder;
 
     [Space]
     private int level_m;
@@ -27,9 +27,9 @@ public class DoorExitScript : MonoBehaviour
 
         level_n = (levelPosition - level_m) / 3 + 1;
 
-        if(doorLeftOrRight == 0)
+        if (windowOnOrUnder == 0)
         {
-            if (level_m == 1)
+            if (level_n == 1)
             {
                 canPass = false;
                 //将门的颜色设置为灰色
@@ -37,17 +37,17 @@ public class DoorExitScript : MonoBehaviour
             }
             else
             {
-                int levelPositionLeft = levelPosition - 1;
-                string nextLevelLeft = LevelToLevelData.stringArray[levelPositionLeft];
+                int levelPositionOn = levelPosition + 3;
+                string nextLevelOn = LevelToLevelData.stringArray[levelPositionOn];
 
-                //要求左边的门是打开的，且左边的关卡是解锁的
-                if (LevelToLevelData.IsDoorOpened(nextLevelLeft, 1, doorOrder) && LevelToLevelData.boolArray[nextLevelLeft[0] - '0'])
+                //要求上边的门是打开的，且上边的关卡是解锁的
+                if (LevelToLevelData.IsWindowOpened(nextLevelOn, 1, windowOrder) && LevelToLevelData.boolArray[nextLevelOn[0] - '0'])
                 {
                     canPass = true;
                     //将门的颜色设置为黄色
                     gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 0, 1);
 
-                    nextLevel = nextLevelLeft;
+                    nextLevel = nextLevelOn;
                 }
                 else
                 {
@@ -57,9 +57,9 @@ public class DoorExitScript : MonoBehaviour
                 }
             }
         }
-        else if (doorLeftOrRight == 1)
+        else if (windowOnOrUnder == 1)
         {
-            if (level_m == 3)
+            if (level_n == 3)
             {
                 canPass = false;
                 //将门的颜色设置为灰色
@@ -67,17 +67,17 @@ public class DoorExitScript : MonoBehaviour
             }
             else
             {
-                int levelPositionRight = levelPosition + 1;
-                string nextLevelRight = LevelToLevelData.stringArray[levelPositionRight];
+                int levelPositionUnder = levelPosition - 3;
+                string nextLevelUnder = LevelToLevelData.stringArray[levelPositionUnder];
 
-                //要求右边的门是打开的，且右边的关卡是解锁的
-                if (LevelToLevelData.IsDoorOpened(nextLevelRight, 0, doorOrder) && LevelToLevelData.boolArray[nextLevelRight[0] - '0'])
+                //要求下边的门是打开的，且下边的关卡是解锁的
+                if (LevelToLevelData.IsWindowOpened(nextLevelUnder, 0, windowOrder) && LevelToLevelData.boolArray[nextLevelUnder[0] - '0'])
                 {
                     canPass = true;
                     //将门的颜色设置为黄色
                     gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 0, 1);
 
-                    nextLevel = nextLevelRight;
+                    nextLevel = nextLevelUnder;
                 }
                 else
                 {
@@ -100,14 +100,14 @@ public class DoorExitScript : MonoBehaviour
 
             LevelToLevelData.nowLevel = nextLevel;
 
-            if (doorLeftOrRight == 1)
-                LevelToLevelData.nwDoor_n = 0;
+            if (windowOnOrUnder == 1)
+                LevelToLevelData.nwWindow_n = 0;
             else
-                LevelToLevelData.nwDoor_n = 1;
-             
-            LevelToLevelData.nwDoor_m = doorOrder;
+                LevelToLevelData.nwWindow_n = 1;
 
-            LevelToLevelData.passFromDoor = true;
+            LevelToLevelData.nwWindow_m = windowOrder;
+
+            LevelToLevelData.passFromWindow = true;
             LevelToLevelData.passFromOrigin = false;
 
             TransitionManager.Instance.Transition(currentLevel, nextLevel);

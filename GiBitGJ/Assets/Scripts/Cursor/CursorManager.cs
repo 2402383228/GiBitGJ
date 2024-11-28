@@ -32,6 +32,11 @@ public class CursorManager : MonoBehaviour
                 Debug.Log(teleport);
                 teleport?.TeleportToScene();
                 break;
+            case "GoBackDreamScene":
+                teleport = clickObject.GetComponent<Teleport>();
+                Debug.Log(teleport);
+                teleport?.TeleportToDreamScene();
+                break;
             case "Item":
                 var item = clickObject.GetComponent<Item>();
                 item?.ItemClick();

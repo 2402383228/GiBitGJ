@@ -6,7 +6,9 @@ public class InventoryManager : Singleton<InventoryManager>
 {
     public ItemDataList_SO itemData;
 
-    [SerializeField] private List<ItemName> itemList = new List<ItemName>();
+    [SerializeField] public static List<ItemName> itemList = new List<ItemName>();
+
+    
 
     public void AddItem(ItemName itemName)
     {
@@ -18,4 +20,6 @@ public class InventoryManager : Singleton<InventoryManager>
             EventHandler.CallUpdateUIEvent(itemData.GetItemDetails(itemName), itemList.Count - 1);
         }
     }
+
+
 }

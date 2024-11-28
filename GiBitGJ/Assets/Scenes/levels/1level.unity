@@ -217,7 +217,7 @@ GameObject:
   - component: {fileID: 199571909}
   m_Layer: 0
   m_Name: Return_Button
-  m_TagString: Teleport
+  m_TagString: GoBackDreamScene
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -238,6 +238,7 @@ MonoBehaviour:
   sceneTo: DreamScene
   nowColor: red_level
   leftOrRight: 0
+  playerPosition: {fileID: 6688631042230968458, guid: f23e93a3214e046478c487d63fc4363e, type: 3}
 --- !u!61 &199571910
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -976,30 +977,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1052902184}
-  - component: {fileID: 1052902183}
+  - component: {fileID: 1052902185}
   m_Layer: 0
-  m_Name: PlayerStartPosition
+  m_Name: OriginEntrance
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1052902183
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1052902182}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 03d707aaea1c03846a1c4af7dc4f50d9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentLevel: 1level
-  doorLeftOrRight: 0
-  doorOrder: 0
-  playerPerfab: {fileID: 3773385964617320516, guid: f23e93a3214e046478c487d63fc4363e, type: 3}
 --- !u!4 &1052902184
 Transform:
   m_ObjectHideFlags: 0
@@ -1009,12 +994,26 @@ Transform:
   m_GameObject: {fileID: 1052902182}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.18, y: -2.61, z: 0}
+  m_LocalPosition: {x: -2.96, y: -3.41, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1052902185
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1052902182}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6be16988191c24e4c9ea775a3ba02261, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentLevel: 1level
+  playerPerfab: {fileID: 3773385964617320516, guid: f23e93a3214e046478c487d63fc4363e, type: 3}
 --- !u!1 &1598066103
 GameObject:
   m_ObjectHideFlags: 0
@@ -1203,7 +1202,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -1
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7823f67a142700a4dbcf6a7eb441efdf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1224,7 +1223,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 10, y: 10, z: 10}
+  m_LocalScale: {x: 0.55, y: 0.55, z: 0.55}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}

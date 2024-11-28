@@ -9,9 +9,14 @@ public class LevelToLevelData : MonoBehaviour
 
 
     /// <summary>
-    /// 依次为第几关，左右（0左1右），上中下三门
+    /// 依次为第几关，左右（0左1右），上中下三门(1,2,3)
     /// </summary>
     public static bool[,,] isDoorOpened;
+
+    /// <summary>
+    /// 依次为第几关，上下（0上1下），左右两门(1,2)
+    /// </summary>
+    public static bool[,,] isWindowOpened;
 
     //这个字典用来存储关卡名字和对应的此时的位置
     public static Dictionary<string, int> levelToNum;
@@ -22,8 +27,20 @@ public class LevelToLevelData : MonoBehaviour
     public static int nwDoor_n = 0;
     public static int nwDoor_m = 0;
 
+    public static int nwWindow_n = 0;
+    public static int nwWindow_m = 0;
+
+    public static bool passFromDoor = false;
+    public static bool passFromWindow = false;
+    public static bool passFromOrigin = true;
+
+    public static Transform originPosition;
+
     private void Start()
     {
+        originPosition = GetComponentInChildren<Transform>();
+        originPosition.position = new Vector3(-2.96f, -3.41f, 0);
+
         #region stringArray赋值
         stringArray = new string[10];
 
@@ -70,6 +87,7 @@ public class LevelToLevelData : MonoBehaviour
         };
         #endregion
 
+        #region isDoorOpened赋值
         isDoorOpened = new bool[10, 2, 4];
 
         for (int i = 0; i < 10; i++)
@@ -94,6 +112,43 @@ public class LevelToLevelData : MonoBehaviour
         //5level
         isDoorOpened[5, 0, 1] = true;
         isDoorOpened[5, 0, 2] = true;
+
+        //6level
+        isDoorOpened[6,0,3] = true;
+        isDoorOpened[6,1,1] = true;
+
+        //9level
+        isDoorOpened[9,0,1] = true;
+        isDoorOpened[9,0,2] = true;
+
+        #endregion
+
+        #region isWindowOpened赋值
+        isWindowOpened = new bool[10, 2, 3];
+
+        for (int i = 0;i < 10;i++)
+        {
+            for (int j = 0;j < 2;j++)
+            {
+                for (int k = 0;k < 3;k++)
+                {
+                    isWindowOpened[i, j, k] = false;
+                }
+            }
+        }
+
+        //6level
+        isWindowOpened[6, 0, 1] = true;
+
+        //7level
+        isWindowOpened[7,0,2]=true;
+        isWindowOpened[7, 1, 1] = true;
+        isWindowOpened[7, 1, 2] = true;
+
+        //9level
+        isWindowOpened[9, 1, 2] = true;
+
+        #endregion
     }
 
     public static bool IsDoorOpened(string level, int direction, int door)
@@ -102,6 +157,14 @@ public class LevelToLevelData : MonoBehaviour
         int levelNum = level[0] - '0';
 
         return isDoorOpened[levelNum, direction, door];
+    }
+
+    public static bool IsWindowOpened(string level, int direction, int window)
+    {
+        //判断是否可以通过
+        int levelNum = level[0] - '0';
+
+        return isWindowOpened[levelNum, direction, window];
     }
 
     public static void Swap<T>(ref T a, ref T b)
