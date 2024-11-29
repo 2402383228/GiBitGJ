@@ -21,6 +21,13 @@ public class ItemManager : MonoBehaviour
     public GameObject itemButtonPre;
     public GameObject itemGroup;
 
+    void Awake()
+    {
+        InventoryManager.Instance.AddItem(ItemName.Bracelet);
+        InventoryManager.Instance.AddItem(ItemName.Photo);
+        InventoryManager.Instance.AddItem(ItemName.Hairpin);
+    }
+
     void Start()
     {
         CloseCanvas();
@@ -102,6 +109,6 @@ public class ItemManager : MonoBehaviour
         InventoryManager.Instance.itemData.GetItemDetails(nowItem).isGet = true;
         CloseCanvas();
         dialogManager.CloseSelection();
-        dialogManager.ShowTargetDialog(18);
+        dialogManager.ShowTargetDialog(nowItem);
     }
 }

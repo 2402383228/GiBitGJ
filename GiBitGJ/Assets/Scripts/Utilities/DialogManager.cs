@@ -147,9 +147,9 @@ public class DialogManager : MonoBehaviour
         ShowCanvas();
     }
 
-    public void ShowTargetDialog(int index)
+    public void ShowTargetDialog(ItemName item)
     {
-        dialogIndex = index;
+        dialogIndex = index.CalculateDialogIndex(item);
         ShowDialogRow();
     }
 
@@ -214,5 +214,22 @@ public class DialogIndex
         {
             return selection;
         }
+    }
+
+    public int CalculateDialogIndex(ItemName item)
+    {
+        if (item == ItemName.Bracelet)
+        {
+            return bracelet;
+        }
+        else if (item == ItemName.Photo)
+        {
+            return photo;
+        }
+        else if (item == ItemName.Hairpin)
+        {
+            return hairpin;
+        }
+        return 0;
     }
 }
