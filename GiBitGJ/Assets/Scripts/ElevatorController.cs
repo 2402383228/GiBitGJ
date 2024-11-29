@@ -29,7 +29,6 @@ public class ElevatorController : MonoBehaviour
         if (transform.position.y >= maxHeight)
         {
             isuping = false;
-            iswaiting = true;
         }
 
         if (transform.position.y <= minHeight)

@@ -59,10 +59,10 @@ public class LevelToLevelData : MonoBehaviour
         #region boolArray赋值
         boolArray = new bool[10];
 
-        boolArray[0] = true;
-        boolArray[1] = true;
+        boolArray[0] = false;
+        boolArray[1] = false;
         boolArray[2] = false;
-        boolArray[3] = true;
+        boolArray[3] = false;
         boolArray[4] = false;
         boolArray[5] = true;
         boolArray[6] = false;
@@ -166,7 +166,127 @@ public class LevelToLevelData : MonoBehaviour
     }
 
     #region 接下来的函数用来初始化各个关卡
+    public static void InitfirstLevel()
+    {
+        nwDoor_n = 0;
+        nwDoor_m = 0;
 
+        nwWindow_n = 0;
+        nwWindow_m = 0;
 
+        originPosition.position = new Vector3(-1f, -3.41f, 0);
+        nowLevel = "1level";
+
+        stringArray[1] = "1level";
+        stringArray[2] = "2level";
+        stringArray[3] = "3level";
+        stringArray[4] = "4level";
+        stringArray[5] = "5level";
+        stringArray[6] = "6level";
+        stringArray[7] = "7level";
+        stringArray[8] = "8level";
+        stringArray[9] = "9level";
+
+        levelToNum["1level"] = 1;
+        levelToNum["2level"] = 2;
+        levelToNum["3level"] = 3;
+        levelToNum["4level"] = 4;
+        levelToNum["5level"] = 5;
+        levelToNum["6level"] = 6;
+        levelToNum["7level"] = 7;
+        levelToNum["8level"] = 8;
+        levelToNum["9level"] = 9;
+        
+        boolArray[0] = false;
+        boolArray[1] = true;
+        boolArray[3] = true;
+        boolArray[5] = true;
+    }
+
+    public static void InitsecondLevel()
+    {
+        nwDoor_n = 0;
+        nwDoor_m = 0;
+
+        nwWindow_n = 0;
+        nwWindow_m = 0;
+
+        originPosition.position = new Vector3(-1f, -3.41f, 0);
+        nowLevel = "1level";
+
+        stringArray[1] = "1level";
+        stringArray[2] = "2level";
+        stringArray[3] = "3level";
+        stringArray[4] = "4level";
+        stringArray[5] = "5level";
+        stringArray[6] = "6level";
+        stringArray[7] = "7level";
+        stringArray[8] = "8level";
+        stringArray[9] = "9level";
+
+        levelToNum["1level"] = 1;
+        levelToNum["2level"] = 2;
+        levelToNum["3level"] = 3;
+        levelToNum["4level"] = 4;
+        levelToNum["5level"] = 5;
+        levelToNum["6level"] = 6;
+        levelToNum["7level"] = 7;
+        levelToNum["8level"] = 8;
+        levelToNum["9level"] = 9;
+
+        boolArray[0] = false;
+        boolArray[1] = true;
+        boolArray[3] = true;
+        boolArray[5] = true;
+        
+        boolArray[4] = true;
+        boolArray[6] = true;
+        boolArray[7] = true;
+    }
+
+    public static void InitThridLevel()
+    {
+        nwDoor_n = 0;
+        nwDoor_m = 0;
+
+        nwWindow_n = 0;
+        nwWindow_m = 0;
+
+        originPosition.position = new Vector3(-1f, -3.41f, 0);
+        nowLevel = "1level";
+
+        stringArray[1] = "1level";
+        stringArray[2] = "2level";
+        stringArray[3] = "3level";
+        stringArray[4] = "4level";
+        stringArray[5] = "5level";
+        stringArray[6] = "6level";
+        stringArray[7] = "7level";
+        stringArray[8] = "8level";
+        stringArray[9] = "9level";
+
+        levelToNum["1level"] = 1;
+        levelToNum["2level"] = 2;
+        levelToNum["3level"] = 3;
+        levelToNum["4level"] = 4;
+        levelToNum["5level"] = 5;
+        levelToNum["6level"] = 6;
+        levelToNum["7level"] = 7;
+        levelToNum["8level"] = 8;
+        levelToNum["9level"] = 9;
+
+        boolArray[0] = true;
+        boolArray[1] = true;
+        boolArray[3] = true;
+        boolArray[5] = true;
+
+        boolArray[4] = true;
+        boolArray[6] = true;
+        boolArray[7] = true;
+
+        boolArray[8] = true;
+        boolArray[9] = true;
+        boolArray[2] = true;
+    }
     #endregion
 }
