@@ -5,19 +5,21 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ItemManager : MonoBehaviour
+public class ItemManagerIndream : MonoBehaviour
 {
     public Canvas canvas;
-    public DialogManager dialogManager;
 
     public ItemName nowItem;
     public Image itemImage;
-    public Button mentionButton;
+    public Button ObserveButton;
     public TMP_Text itemName;
     public TMP_Text itemDescription;
 
     public GameObject itemButtonPre;
     public GameObject itemGroup;
+
+    public Sprite photoBackLocked;
+    public Sprite photoBackColored;
 
     void Start()
     {
@@ -64,13 +66,13 @@ public class ItemManager : MonoBehaviour
         ShowImage();
         ShowName();
         ShowDescription();
-        if (nowItem == ItemName.None || InventoryManager.Instance.itemData.GetItemDetails(nowItem).isGet == true)
+        if (nowItem == ItemName.Photo)
         {
-            mentionButton.gameObject.SetActive(false);
+            ObserveButton.gameObject.SetActive(true);
         }
         else
         {
-            mentionButton.gameObject.SetActive(true);
+            ObserveButton.gameObject.SetActive(false);
         }
     }
 
@@ -102,11 +104,15 @@ public class ItemManager : MonoBehaviour
         UpdateItem();
     }
 
-    public void OnMentionItem()
+    public void OnObserveClick()
     {
-        InventoryManager.Instance.itemData.GetItemDetails(nowItem).isGet = true;
-        CloseCanvas();
-        dialogManager.CloseSelection();
-        dialogManager.ShowTargetDialog(nowItem);
+        if (InventoryManager.Instance.itemData.GetItemDetails(nowItem).isGet)
+        {
+            itemImage.sprite = photoBackColored;
+        }
+        else
+        {
+            itemImage.sprite = photoBackLocked;
+        }
     }
 }

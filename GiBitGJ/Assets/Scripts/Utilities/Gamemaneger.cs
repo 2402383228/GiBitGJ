@@ -11,7 +11,7 @@ public class Gamemaneger : MonoBehaviour
 
     void Awake()
     {
-        DayInGame = 3;
+        DayInGame = 1;
         isDialogFinished = new bool[4];
     }
 
@@ -19,7 +19,7 @@ public class Gamemaneger : MonoBehaviour
     {
         for (int i = 0; i < 4; i++)
         {
-            isDialogFinished[i] = true;
+            isDialogFinished[i] = false;
         }
     }
 }

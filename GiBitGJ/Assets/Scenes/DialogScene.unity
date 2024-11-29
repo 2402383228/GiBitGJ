@@ -2892,7 +2892,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canvas: {fileID: 2056533424}
   dialogManager: {fileID: 879012036}
-  returnButtonInDialogUI: {fileID: 0}
   nowItem: 0
   itemImage: {fileID: 969072552}
   mentionButton: {fileID: 1809881653}
