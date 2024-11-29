@@ -29,7 +29,7 @@ public class WindowExitScript : MonoBehaviour
 
         if (windowOnOrUnder == 0)
         {
-            if (level_n == 1)
+            if (level_n == 3)
             {
                 canPass = false;
                 //将门的颜色设置为灰色
@@ -59,7 +59,7 @@ public class WindowExitScript : MonoBehaviour
         }
         else if (windowOnOrUnder == 1)
         {
-            if (level_n == 3)
+            if (level_n == 1)
             {
                 canPass = false;
                 //将门的颜色设置为灰色
