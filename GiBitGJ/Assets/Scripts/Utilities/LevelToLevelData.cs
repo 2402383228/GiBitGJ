@@ -82,6 +82,7 @@ public class LevelToLevelData : MonoBehaviour
         #region levelToNum¸³Öµ
         levelToNum = new Dictionary<string, int>
         {
+            {"0level",0},
             {"1level",1},
             {"2level",2},
             {"3level",3},
