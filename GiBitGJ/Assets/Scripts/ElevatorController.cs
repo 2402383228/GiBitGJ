@@ -45,7 +45,10 @@ public class ElevatorController : MonoBehaviour
         {
             iswaiting = false;
 
-            other?.transform.SetParent(transform);
+            if(isuping)
+                other?.transform.SetParent(null);
+            else
+                other?.transform.SetParent(transform);
         }
     }
 
