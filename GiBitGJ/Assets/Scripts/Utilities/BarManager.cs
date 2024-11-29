@@ -12,10 +12,6 @@ public class BarManager : MonoBehaviour
     }
     public void OnDialogClick()
     {
-        if (ItemManager.canMentionBracelet == 1 && ItemManager.isMentionBracelet == 0)
-        {
-            PlayerPrefs.SetInt("dialogIndex", 17);
-        }
         teleport.TeleportToScene();
     }
 }

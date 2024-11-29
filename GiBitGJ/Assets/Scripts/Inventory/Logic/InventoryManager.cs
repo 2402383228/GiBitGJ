@@ -8,6 +8,10 @@ public class InventoryManager : Singleton<InventoryManager>
 
     public static List<ItemName> itemList = new List<ItemName>();
 
+    public bool getBracelet => itemData.GetItemDetails(ItemName.Bracelet).isGet;
+    public bool getPhoto => itemData.GetItemDetails(ItemName.Photo).isGet;
+    public bool getHairpin => itemData.GetItemDetails(ItemName.Hairpin).isGet;
+
     public void AddItem(ItemName itemName)
     {
         if (!itemList.Contains(itemName))
@@ -15,7 +19,7 @@ public class InventoryManager : Singleton<InventoryManager>
             itemList.Add(itemName);
             Debug.Log(itemData.GetItemDetails(itemName).info);
 
-            //UI对应显示
+            //UI锟斤拷应锟斤拷示
             EventHandler.CallUpdateUIEvent(itemData.GetItemDetails(itemName), itemList.Count - 1);
         }
     }

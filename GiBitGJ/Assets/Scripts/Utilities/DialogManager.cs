@@ -9,6 +9,8 @@ public class DialogManager : MonoBehaviour
 {
     static public int dialogIndex;
 
+    public DialogIndex index;
+
     public Teleport teleport;
     public Canvas canvas;
     public ItemManager itemManager;
@@ -29,12 +31,14 @@ public class DialogManager : MonoBehaviour
     {
         imageDic["小唐"] = sprites[0];
         imageDic["我"] = sprites[1];
+        index = new DialogIndex();
+        index.UpdateDialogIndex();
     }
 
 
     void OnEnable()
     {
-        dialogIndex = 1;
+        dialogIndex = index.CalculateDialogIndex();
     }
     void Start()
     {
@@ -107,6 +111,7 @@ public class DialogManager : MonoBehaviour
         }
         else if (cells[0] == "SELECTION" && int.Parse(cells[1]) == dialogIndex)
         {
+            Gamemaneger.isDialogFinished[Gamemaneger.DayInGame] = true;
             ShowSelection();
         }
         else if (cells[0] == "END" && int.Parse(cells[1]) == dialogIndex)
@@ -150,7 +155,7 @@ public class DialogManager : MonoBehaviour
 
     public void ShowOverDialog()
     {
-        dialogIndex = 30;
+        dialogIndex = index.over;
         ShowDialogRow();
     }
 
@@ -158,5 +163,56 @@ public class DialogManager : MonoBehaviour
     {
         CloseSelection();
         ShowOverDialog();
+    }
+}
+
+public class DialogIndex
+{
+    public int day => Gamemaneger.DayInGame;
+    public int start;
+    public int selection;
+    public int bracelet;
+    public int photo;
+    public int hairpin;
+    public int over;
+
+    public void UpdateDialogIndex()
+    {
+        if (day == 1)
+        {
+            start = 1;
+            selection = 17;
+            bracelet = 18;
+            over = 30;
+        }
+        else if (day == 2)
+        {
+            start = 38;
+            selection = 74;
+            bracelet = 75;
+            photo = 86;
+            over = 102;
+        }
+        else if (day == 3)
+        {
+            start = 113;
+            selection = 147;
+            bracelet = 148;
+            photo = 158;
+            hairpin = 170;
+            over = 182;
+        }
+    }
+
+    public int CalculateDialogIndex()
+    {
+        if (Gamemaneger.isDialogFinished[Gamemaneger.DayInGame] == false)
+        {
+            return start;
+        }
+        else
+        {
+            return selection;
+        }
     }
 }

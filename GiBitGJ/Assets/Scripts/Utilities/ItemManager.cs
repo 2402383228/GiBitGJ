@@ -21,9 +21,6 @@ public class ItemManager : MonoBehaviour
     public GameObject itemButtonPre;
     public GameObject itemGroup;
 
-    public static int canMentionBracelet;
-    public static int isMentionBracelet;
-
     void Start()
     {
         CloseCanvas();

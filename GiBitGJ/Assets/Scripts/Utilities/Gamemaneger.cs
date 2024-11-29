@@ -5,10 +5,21 @@ using UnityEngine;
 
 public class Gamemaneger : MonoBehaviour
 {
-    static int DayInGame;
+    public static int DayInGame;
+
+    public static bool[] isDialogFinished;
 
     void Awake()
     {
         DayInGame = 1;
+        isDialogFinished = new bool[4];
+    }
+
+    void Start()
+    {
+        for (int i = 0; i < 4; i++)
+        {
+            isDialogFinished[i] = false;
+        }
     }
 }
