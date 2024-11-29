@@ -43,6 +43,11 @@ public class LevelToLevelData : MonoBehaviour
     public static int windmillSum;
     public static bool[] windmillHasBeenTouch;
 
+    //Ô¿³×±¦Ïä½»»¥
+    public static bool hasKey = false;
+    public static bool chestHasBeenOpened = false;
+
+
     private void Start()
     {
         originPosition = GetComponentInChildren<Transform>();
