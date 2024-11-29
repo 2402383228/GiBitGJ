@@ -109,6 +109,10 @@ public class LevelToLevelData : MonoBehaviour
         isDoorOpened[3, 0, 3] = true;
         isDoorOpened[3, 1, 2] = true;
 
+        //4level
+        isDoorOpened[4, 0, 1] = true;
+        isDoorOpened[4, 0, 2] = true;
+
         //5level
         isDoorOpened[5, 0, 1] = true;
         isDoorOpened[5, 0, 2] = true;
@@ -117,9 +121,11 @@ public class LevelToLevelData : MonoBehaviour
         isDoorOpened[6,0,3] = true;
         isDoorOpened[6,1,1] = true;
 
+        //8level
+        isDoorOpened[8,0,2] = true;
+
         //9level
-        isDoorOpened[9,0,1] = true;
-        isDoorOpened[9,0,2] = true;
+        isDoorOpened[9,1,3] = true;
 
         #endregion
 
@@ -137,7 +143,35 @@ public class LevelToLevelData : MonoBehaviour
             }
         }
 
+        //2level
+        isWindowOpened[2, 0, 2] = true;
+        isWindowOpened[2, 0, 3] = true;
 
+        //3level
+        isWindowOpened[3, 1, 3] = true;
+
+        //4level
+        isWindowOpened[4, 1, 3] = true;
+
+        //6level
+        isWindowOpened[6, 0, 1] = true;
+
+        //7level
+        isWindowOpened[7, 1, 1] = true;
+        isWindowOpened[7, 1, 2] = true;
+        isWindowOpened[7, 1, 3] = true;
+
+        isWindowOpened[7, 0, 3] = true;
+
+        //8level
+        isWindowOpened[8, 0, 1] = true;
+        isWindowOpened[8, 0, 3] = true;
+
+        isWindowOpened[8, 1, 1] = true;
+        isWindowOpened[8, 1, 3] = true;
+
+        //9level
+        isWindowOpened[9, 0, 2] = true;
 
         #endregion
     }
