@@ -50,4 +50,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/BarScene.unity
     guid: deb754f4657b14644bbd30817d31d70a
+  - enabled: 1
+    path: Assets/Scenes/levels/0level.unity
+    guid: ff4acfc1bb83df549b48c5aceb3bf5ce
   m_configObjects: {}
