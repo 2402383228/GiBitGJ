@@ -147,7 +147,7 @@ public class LevelToLevelData : MonoBehaviour
         }
 
         //2level
-        isWindowOpened[2, 0, 2] = true;
+        //isWindowOpened[2, 0, 2] = true;
         isWindowOpened[2, 0, 3] = true;
 
         //3level
@@ -161,16 +161,16 @@ public class LevelToLevelData : MonoBehaviour
 
         //7level
         isWindowOpened[7, 1, 1] = true;
-        isWindowOpened[7, 1, 2] = true;
-        isWindowOpened[7, 1, 3] = true;
+        //isWindowOpened[7, 1, 2] = true;
+        //isWindowOpened[7, 1, 3] = true;
 
         isWindowOpened[7, 0, 3] = true;
 
         //8level
-        isWindowOpened[8, 0, 1] = true;
+        //isWindowOpened[8, 0, 1] = true;
         isWindowOpened[8, 0, 3] = true;
 
-        isWindowOpened[8, 1, 1] = true;
+        //isWindowOpened[8, 1, 1] = true;
         isWindowOpened[8, 1, 3] = true;
 
         //9level
@@ -179,7 +179,7 @@ public class LevelToLevelData : MonoBehaviour
         #endregion
 
         #region elevatorAbled¸³Öµ
-        elevatorAbled = new bool[8];
+        elevatorAbled = new bool[9];
 
         for (int i = 0; i < elevatorAbled.Length; i++)
             elevatorAbled[i] = false;
