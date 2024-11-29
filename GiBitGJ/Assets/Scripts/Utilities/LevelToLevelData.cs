@@ -36,6 +36,9 @@ public class LevelToLevelData : MonoBehaviour
 
     public static Transform originPosition;
 
+    //µçÌÝ½»»¥
+    public static bool[] elevatorAbled;
+
     private void Start()
     {
         originPosition = GetComponentInChildren<Transform>();
@@ -64,7 +67,7 @@ public class LevelToLevelData : MonoBehaviour
         boolArray[2] = false;
         boolArray[3] = false;
         boolArray[4] = false;
-        boolArray[5] = true;
+        boolArray[5] = false;
         boolArray[6] = false;
         boolArray[7] = false;
         boolArray[8] = false;
@@ -174,6 +177,15 @@ public class LevelToLevelData : MonoBehaviour
         isWindowOpened[9, 0, 2] = true;
 
         #endregion
+
+        #region elevatorAbled¸³Öµ
+        elevatorAbled = new bool[8];
+
+        for (int i = 0; i < elevatorAbled.Length; i++)
+            elevatorAbled[i] = false;
+        #endregion
+
+        InitThridLevel();
     }
 
     public static bool IsDoorOpened(string level, int direction, int door)

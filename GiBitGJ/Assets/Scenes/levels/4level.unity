@@ -1956,7 +1956,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -3
-  m_Sprite: {fileID: 21300000, guid: cdb60888ca9e40a4889615d62a848b58, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 62bd72ca0ecc9924bb26b3f509073d99, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2878,11 +2878,40 @@ PrefabInstance:
       propertyPath: minHeight
       value: -3.17
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8425696092609529920, guid: 15f4495dd3b1ef147b141c6c1db11202, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5265874996031563787, guid: 15f4495dd3b1ef147b141c6c1db11202, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1541662904}
   m_SourcePrefab: {fileID: 100100000, guid: 15f4495dd3b1ef147b141c6c1db11202, type: 3}
+--- !u!1 &1541662903 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5265874996031563787, guid: 15f4495dd3b1ef147b141c6c1db11202, type: 3}
+  m_PrefabInstance: {fileID: 1541662902}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1541662904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1541662903}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29bf05a6edd83494991c70929d2626fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unlockedElevator: {fileID: 21300000, guid: c249e95043e512742bd26ffa04bede15, type: 3}
+  lockedElevator: {fileID: 21300000, guid: 5c155cdf2c847bb469f6eba2f2c49da4, type: 3}
+  elevatorOrder: 3
+  maxHeight: -0.07
+  minHeight: -3.17
+  isuping: 1
+  iswaiting: 1
+  moveSpeed: 1
 --- !u!1 &1611139131
 GameObject:
   m_ObjectHideFlags: 0
