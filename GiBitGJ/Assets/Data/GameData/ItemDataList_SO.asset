@@ -13,13 +13,23 @@ MonoBehaviour:
   m_Name: ItemDataList_SO
   m_EditorClassIdentifier: 
   itemDetailsList:
-  - itemName: 1
-    name: Bracelet
-    itemSprite: {fileID: 21300000, guid: b3f5178b8ffe7d74ebaae1e2bd749588, type: 3}
-    info: it is a bracelet
-    isGet: 1
   - itemName: 0
     name: 
     itemSprite: {fileID: 21300000, guid: d1b2c282eb3935846b501ec651f4526e, type: 3}
     info: 
-    isGet: 1
+    isGet: 0
+  - itemName: 1
+    name: Bracelet
+    itemSprite: {fileID: 21300000, guid: b3f5178b8ffe7d74ebaae1e2bd749588, type: 3}
+    info: it is a bracelet
+    isGet: 0
+  - itemName: 2
+    name: Photo
+    itemSprite: {fileID: 21300000, guid: 07b2ecb8d55a73e4ca4b69b26c92026f, type: 3}
+    info: it is a photo
+    isGet: 0
+  - itemName: 3
+    name: Hairpin
+    itemSprite: {fileID: 21300000, guid: 60973ed57a32e264699d3b51a0807720, type: 3}
+    info: it is a hairpin
+    isGet: 0

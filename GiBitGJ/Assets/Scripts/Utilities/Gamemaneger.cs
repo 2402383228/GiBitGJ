@@ -5,5 +5,10 @@ using UnityEngine;
 
 public class Gamemaneger : MonoBehaviour
 {
+    static int DayInGame;
 
+    void Awake()
+    {
+        DayInGame = 1;
+    }
 }

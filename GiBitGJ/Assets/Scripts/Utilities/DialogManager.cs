@@ -27,8 +27,8 @@ public class DialogManager : MonoBehaviour
 
     void Awake()
     {
-        imageDic["NPC："] = sprites[0];
-        imageDic["玩家："] = sprites[1];
+        imageDic["小唐"] = sprites[0];
+        imageDic["我"] = sprites[1];
     }
 
 
@@ -55,7 +55,7 @@ public class DialogManager : MonoBehaviour
 
     public void CloseCanvas()
     {
-        canvas.gameObject.SetActive(false); 
+        canvas.gameObject.SetActive(false);
     }
 
 
@@ -73,11 +73,11 @@ public class DialogManager : MonoBehaviour
 
     public void UpdateImage(string _name, string _position)
     {
-        if (_name == "NPC：")
+        if (_name == "小唐")
         {
             spriteLeft.sprite = imageDic[_name];
         }
-        else if (_name == "玩家：")
+        else if (_name == "我")
         {
             spriteRight.sprite = imageDic[_name];
         }
@@ -122,7 +122,7 @@ public class DialogManager : MonoBehaviour
 
     public void Operate(string operation)
     {
-        if (operation == "看到手镯")
+        if (operation == "GetBracelet")
         {
             InventoryManager.Instance.AddItem(ItemName.Bracelet);
             dialogIndex++;
