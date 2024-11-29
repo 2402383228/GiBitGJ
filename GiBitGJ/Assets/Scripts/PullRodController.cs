@@ -36,7 +36,7 @@ public class PullRodController : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.CompareTag("PlayerSelf") && Input.GetKeyDown(KeyCode.E))
+        if (collision.CompareTag("PlayerSelf") && Input.GetKeyDown(KeyCode.E) && !LevelToLevelData.elevatorAbled[PullRodOrder])
         {
             LevelToLevelData.elevatorAbled[PullRodOrder] = true;
             LevelToLevelData.isWindowOpened[num1,num2,num3] = true;

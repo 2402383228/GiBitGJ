@@ -39,6 +39,10 @@ public class LevelToLevelData : MonoBehaviour
     //电梯交互
     public static bool[] elevatorAbled;
 
+    //风车交互
+    public static int windmillSum;
+    public static bool[] windmillHasBeenTouch;
+
     private void Start()
     {
         originPosition = GetComponentInChildren<Transform>();
@@ -183,6 +187,16 @@ public class LevelToLevelData : MonoBehaviour
 
         for (int i = 0; i < elevatorAbled.Length; i++)
             elevatorAbled[i] = false;
+        #endregion
+
+        #region 风车赋值
+
+        windmillSum = 0;
+
+        windmillHasBeenTouch = new bool[5];
+        for (int i = 0; i < windmillHasBeenTouch.Length; i++)
+            windmillHasBeenTouch[i] = false;
+
         #endregion
 
         InitThridLevel();
