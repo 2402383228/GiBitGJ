@@ -45,7 +45,7 @@ public class ElevatorController : MonoBehaviour
         {
             iswaiting = false;
 
-            other.transform.SetParent(transform);
+            other?.transform.SetParent(transform);
         }
     }
 
@@ -53,7 +53,7 @@ public class ElevatorController : MonoBehaviour
     {
         if(other.CompareTag("PlayerSelf"))
         {
-            other.transform.SetParent(null);
+            //other?.transform.SetParent(null);
         }
     }
 }
