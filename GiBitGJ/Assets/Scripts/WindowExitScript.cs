@@ -21,7 +21,7 @@ public class WindowExitScript : MonoBehaviour
     {
         int levelPosition = LevelToLevelData.levelToNum[currentLevel];
 
-        /*
+
         //对于特殊房间进行特判
         if(windowOnOrUnder == 0 && levelPosition == 8 && windowOrder == 2 && LevelToLevelData.IsWindowOpened("0level", 1, windowOrder) && LevelToLevelData.boolArray[0])
         {
@@ -43,8 +43,18 @@ public class WindowExitScript : MonoBehaviour
 
             return;
         }
-        */
+        else if (windowOnOrUnder == 1 && levelPosition == 0 && windowOrder == 2 && LevelToLevelData.stringArray[8] == "2level")
+        {
+            canPass = true;
+            //将门的颜色设置为黄色
+            gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 0, 1);
 
+            nextLevel = "2level";
+
+            return;
+        }
+
+        //////////////////////////////////////////////////////////分割线//////////////////////////////////////////////////////////
 
         //n 是行，m 是列
         level_m = levelPosition % 3;
