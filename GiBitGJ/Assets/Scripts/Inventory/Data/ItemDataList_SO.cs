@@ -21,5 +21,6 @@ public class ItemDetails
     public string name;
     public Sprite itemSprite;
     public string info;
+    public string detailInfo;
     public bool isGet;
 }

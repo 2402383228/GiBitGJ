@@ -39,14 +39,14 @@ public class ItemManager : MonoBehaviour
         nowItem = ItemName.None;
         UpdateItem();
         GenerateItem();
-        returnButtonInDialogUI.gameObject.SetActive(false);
+        // returnButtonInDialogUI.gameObject.SetActive(false);
     }
 
     public void CloseCanvas()
     {
         canvas.gameObject.SetActive(false);
 
-        returnButtonInDialogUI.gameObject.SetActive(true);
+        // returnButtonInDialogUI.gameObject.SetActive(true);
     }
 
     public void GenerateItem()
@@ -95,7 +95,14 @@ public class ItemManager : MonoBehaviour
 
     void ShowDescription()
     {
-        itemDescription.text = InventoryManager.Instance.itemData.GetItemDetails(nowItem).info;
+        if (InventoryManager.Instance.itemData.GetItemDetails(nowItem).isGet)
+        {
+            itemDescription.text = InventoryManager.Instance.itemData.GetItemDetails(nowItem).detailInfo;
+        }
+        else
+        {
+            itemDescription.text = InventoryManager.Instance.itemData.GetItemDetails(nowItem).info;
+        }
     }
 
     public void OnItemClick(ItemName item)

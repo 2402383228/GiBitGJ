@@ -18,6 +18,7 @@ public class DialogManager : MonoBehaviour
     public TextAsset dialogDataFile;
     public SpriteRenderer spriteLeft;
     public SpriteRenderer spriteRight;
+    public GameObject namePanel;
     public TMP_Text nameText;
     public TMP_Text dialogText;
     public List<Sprite> sprites = new List<Sprite>();
@@ -65,6 +66,7 @@ public class DialogManager : MonoBehaviour
 
     public void UpdateText(string _name, string _text)
     {
+        namePanel.SetActive(true);
         nameText.text = _name;
         dialogText.text = _text;
     }
@@ -132,6 +134,11 @@ public class DialogManager : MonoBehaviour
             InventoryManager.Instance.AddItem(ItemName.Bracelet);
             dialogIndex++;
             nextButton.gameObject.SetActive(true);
+        }
+        else if (operation == "ShowAside")
+        {
+            dialogIndex++;
+            namePanel.SetActive(false);
         }
     }
 
