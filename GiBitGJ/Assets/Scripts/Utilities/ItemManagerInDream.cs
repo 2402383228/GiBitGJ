@@ -23,6 +23,7 @@ public class ItemManagerIndream : MonoBehaviour
 
     void Start()
     {
+        PlayMusic();
         CloseCanvas();
     }
 
@@ -114,5 +115,22 @@ public class ItemManagerIndream : MonoBehaviour
         {
             itemImage.sprite = photoBackLocked;
         }
+    }
+
+    public void PlayMusic()
+    {
+        if (Gamemaneger.DayInGame == 3)
+        {
+            AudioManger.Instance.PlayBackgroundMusic(3);
+        }
+        else
+        {
+            AudioManger.Instance.PlayBackgroundMusic(2);
+        }
+    }
+
+    public void PlayButtonSound()
+    {
+        AudioManger.Instance.PlaySoundEffect();
     }
 }
