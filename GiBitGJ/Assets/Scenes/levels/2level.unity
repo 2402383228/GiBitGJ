@@ -786,6 +786,8 @@ MonoBehaviour:
   currentLevel: 2level
   windowOnOrUnder: 0
   windowOrder: 2
+  elevatorOrder: 7
+  lockedWindow: {fileID: 1394199698, guid: f78f173d2d9314e4fa8e4efa414ecf5b, type: 3}
 --- !u!61 &732124831
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1973,6 +1975,8 @@ MonoBehaviour:
   currentLevel: 2level
   windowOnOrUnder: 0
   windowOrder: 3
+  elevatorOrder: 0
+  lockedWindow: {fileID: 0}
 --- !u!61 &1459098283
 BoxCollider2D:
   m_ObjectHideFlags: 0

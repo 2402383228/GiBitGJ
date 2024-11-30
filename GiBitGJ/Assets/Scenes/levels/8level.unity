@@ -865,6 +865,8 @@ MonoBehaviour:
   currentLevel: 8level
   windowOnOrUnder: 1
   windowOrder: 1
+  elevatorOrder: 4
+  lockedWindow: {fileID: 1394199698, guid: f78f173d2d9314e4fa8e4efa414ecf5b, type: 3}
 --- !u!61 &344406085
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2874,6 +2876,8 @@ MonoBehaviour:
   currentLevel: 8level
   windowOnOrUnder: 0
   windowOrder: 1
+  elevatorOrder: 1
+  lockedWindow: {fileID: 1394199698, guid: f78f173d2d9314e4fa8e4efa414ecf5b, type: 3}
 --- !u!61 &1400925382
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3566,7 +3570,7 @@ Transform:
   m_GameObject: {fileID: 1630707924}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.3171, y: -5.1496, z: 0.04721329}
+  m_LocalPosition: {x: -1.29, y: -5.38, z: 0.04721329}
   m_LocalScale: {x: 1.3144505, y: 0.6304285, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3718,6 +3722,8 @@ MonoBehaviour:
   currentLevel: 8level
   windowOnOrUnder: 0
   windowOrder: 3
+  elevatorOrder: 0
+  lockedWindow: {fileID: 0}
 --- !u!61 &1762592409
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4686,6 +4692,8 @@ MonoBehaviour:
   currentLevel: 8level
   windowOnOrUnder: 1
   windowOrder: 3
+  elevatorOrder: 0
+  lockedWindow: {fileID: 0}
 --- !u!61 &2080810608
 BoxCollider2D:
   m_ObjectHideFlags: 0

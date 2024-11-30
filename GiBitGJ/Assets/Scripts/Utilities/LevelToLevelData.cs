@@ -193,6 +193,10 @@ public class LevelToLevelData : MonoBehaviour
 
         for (int i = 0; i < elevatorAbled.Length; i++)
             elevatorAbled[i] = false;
+
+        //设置特殊情况用来兼顾电梯口是否上锁
+        elevatorAbled[0] = true;
+
         #endregion
 
         #region 风车赋值
