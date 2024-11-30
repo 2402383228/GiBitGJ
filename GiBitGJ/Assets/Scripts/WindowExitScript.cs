@@ -14,6 +14,10 @@ public class WindowExitScript : MonoBehaviour
     private int level_m;
     private int level_n;
 
+    [Space]
+    [SerializeField] private int elevatorOrder;
+    [SerializeField] private Sprite lockedWindow;
+
     private string nextLevel;
     private bool canPass = false;
 
@@ -21,6 +25,12 @@ public class WindowExitScript : MonoBehaviour
     {
         int levelPosition = LevelToLevelData.levelToNum[currentLevel];
 
+        //特判是否和电梯锁在一起
+        if (!LevelToLevelData.elevatorAbled[elevatorOrder])
+        {
+            GetComponent<SpriteRenderer>().sprite = lockedWindow;
+            return;
+        }
 
         //对于特殊房间进行特判
         if(windowOnOrUnder == 0 && levelPosition == 8 && windowOrder == 2 && LevelToLevelData.IsWindowOpened("0level", 1, windowOrder) && LevelToLevelData.boolArray[0])
