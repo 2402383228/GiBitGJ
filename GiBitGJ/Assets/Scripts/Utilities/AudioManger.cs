@@ -13,6 +13,10 @@ public class AudioManger : Singleton<AudioManger>
 
     public void PlayBackgroundMusic(int index)
     {
+        if (backgroundMusicSource.clip == backgroundMusicClip[index])
+        {
+            return;
+        }
         backgroundMusicSource.clip = backgroundMusicClip[index];
         backgroundMusicSource.loop = true;
         backgroundMusicSource.Play();
