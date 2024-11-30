@@ -1073,7 +1073,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7940606690576906508, guid: 15f4495dd3b1ef147b141c6c1db11202, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.18
+      value: -3.09
       objectReference: {fileID: 0}
     - target: {fileID: 7940606690576906508, guid: 15f4495dd3b1ef147b141c6c1db11202, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1145,7 +1145,7 @@ MonoBehaviour:
   lockedElevator: {fileID: 21300000, guid: 5c155cdf2c847bb469f6eba2f2c49da4, type: 3}
   elevatorOrder: 2
   maxHeight: -0.07
-  minHeight: -3.18
+  minHeight: -3.5
   isuping: 1
   iswaiting: 1
   moveSpeed: 1
@@ -3505,9 +3505,9 @@ MonoBehaviour:
   unlockedElevator: {fileID: 21300000, guid: c249e95043e512742bd26ffa04bede15, type: 3}
   lockedElevator: {fileID: 21300000, guid: 5c155cdf2c847bb469f6eba2f2c49da4, type: 3}
   elevatorOrder: 5
-  maxHeight: -3.18
-  minHeight: -2.5
-  isuping: 0
+  maxHeight: -3
+  minHeight: -3.84
+  isuping: 1
   iswaiting: 1
   moveSpeed: 1
 --- !u!1001 &1384599627
