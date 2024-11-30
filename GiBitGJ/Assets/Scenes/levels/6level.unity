@@ -3366,13 +3366,41 @@ PrefabInstance:
       propertyPath: WindmillOrder
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 2271072996978451405, guid: a2f8edc434b84384a8caadf1b97048cf, type: 3}
+      propertyPath: m_Size.x
+      value: 5.043867
+      objectReference: {fileID: 0}
+    - target: {fileID: 2271072996978451405, guid: a2f8edc434b84384a8caadf1b97048cf, type: 3}
+      propertyPath: m_Size.y
+      value: 6.057942
+      objectReference: {fileID: 0}
+    - target: {fileID: 2271072996978451405, guid: a2f8edc434b84384a8caadf1b97048cf, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.114676
+      objectReference: {fileID: 0}
+    - target: {fileID: 2271072996978451405, guid: a2f8edc434b84384a8caadf1b97048cf, type: 3}
+      propertyPath: m_Offset.y
+      value: 1.6916068
+      objectReference: {fileID: 0}
+    - target: {fileID: 5052956118106255791, guid: a2f8edc434b84384a8caadf1b97048cf, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.44
+      objectReference: {fileID: 0}
+    - target: {fileID: 5052956118106255791, guid: a2f8edc434b84384a8caadf1b97048cf, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.44
+      objectReference: {fileID: 0}
+    - target: {fileID: 5052956118106255791, guid: a2f8edc434b84384a8caadf1b97048cf, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.44
+      objectReference: {fileID: 0}
     - target: {fileID: 5052956118106255791, guid: a2f8edc434b84384a8caadf1b97048cf, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.2325857
+      value: 1.98
       objectReference: {fileID: 0}
     - target: {fileID: 5052956118106255791, guid: a2f8edc434b84384a8caadf1b97048cf, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.3151631
+      value: 2.39
       objectReference: {fileID: 0}
     - target: {fileID: 5052956118106255791, guid: a2f8edc434b84384a8caadf1b97048cf, type: 3}
       propertyPath: m_LocalPosition.z
