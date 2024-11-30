@@ -35,6 +35,7 @@ public class CursorManager : MonoBehaviour
             case "GoBackDreamScene":
                 teleport = clickObject.GetComponent<Teleport>();
                 Debug.Log(teleport);
+                AudioManger.Instance.PlayButtonSound();
                 teleport?.TeleportToDreamScene();
                 break;
             case "Item":
