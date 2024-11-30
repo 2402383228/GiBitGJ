@@ -12,12 +12,12 @@ public class Gamemaneger : MonoBehaviour
     void Awake()
     {
         DayInGame = 1;
-        isDialogFinished = new bool[4];
+        isDialogFinished = new bool[10];
     }
 
     void Start()
     {
-        for (int i = 0; i < 4; i++)
+        for (int i = 0; i < 10; i++)
         {
             isDialogFinished[i] = false;
         }

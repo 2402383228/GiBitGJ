@@ -6,7 +6,7 @@ public class TestScript : MonoBehaviour
 {
     void Start()
     {
-        Gamemaneger.DayInGame = 1;
+        Gamemaneger.DayInGame = 4;
 
         /*
         InventoryManager.Instance.AddItem(ItemName.Bracelet);

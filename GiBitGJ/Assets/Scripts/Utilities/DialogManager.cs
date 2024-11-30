@@ -117,6 +117,10 @@ public class DialogManager : MonoBehaviour
         {
             teleport.TeleportToScene();
         }
+        else if (cells[0] == "HE" && int.Parse(cells[1]) == dialogIndex)
+        {
+            TransitionManager.Instance.Transition("DialogScene", "HE");
+        }
     }
 
     public void OnClickNext()
@@ -208,6 +212,10 @@ public class DialogIndex
             photo = 158;
             hairpin = 170;
             over = 182;
+        }
+        else if (day == 4)
+        {
+            start = 194;
         }
     }
 
