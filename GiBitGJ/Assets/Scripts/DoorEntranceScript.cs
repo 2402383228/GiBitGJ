@@ -17,6 +17,8 @@ public class DoorEntranceScript : MonoBehaviour
         if(LevelToLevelData.nowLevel == currentLevel && LevelToLevelData.nwDoor_n == doorLeftOrRight && LevelToLevelData.nwDoor_m == doorOrder && LevelToLevelData.passFromDoor)
         {
             LevelToLevelData.passFromDoor = false;
+            LevelToLevelData.passFromOrigin = false;
+            LevelToLevelData.passFromWindow = false;
             Instantiate(playerPerfab, transform.position, Quaternion.identity);
         }
     }

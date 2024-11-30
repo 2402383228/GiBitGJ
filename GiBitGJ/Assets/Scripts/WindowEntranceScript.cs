@@ -16,6 +16,8 @@ public class WindowEntranceScript : MonoBehaviour
     {
         if (LevelToLevelData.nowLevel == currentLevel && LevelToLevelData.nwWindow_n == windowOnOrUnder && LevelToLevelData.nwWindow_m == windowOrder && LevelToLevelData.passFromWindow)
         {
+            LevelToLevelData.passFromDoor = false;
+            LevelToLevelData.passFromOrigin = false;
             LevelToLevelData.passFromWindow = false;
             Instantiate(playerPerfab, transform.position, Quaternion.identity);
         }
