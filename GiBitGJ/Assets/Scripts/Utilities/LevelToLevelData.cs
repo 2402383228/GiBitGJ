@@ -239,6 +239,10 @@ public class LevelToLevelData : MonoBehaviour
     #region 接下来的函数用来初始化各个关卡
     public static void InitfirstLevel()
     {
+        passFromOrigin = true;
+        passFromDoor = false;
+        passFromWindow = false;
+
         nwDoor_n = 0;
         nwDoor_m = 0;
 
@@ -276,6 +280,10 @@ public class LevelToLevelData : MonoBehaviour
 
     public static void InitsecondLevel()
     {
+        passFromOrigin = true;
+        passFromDoor = false;
+        passFromWindow = false;
+
         nwDoor_n = 0;
         nwDoor_m = 0;
 
@@ -317,6 +325,10 @@ public class LevelToLevelData : MonoBehaviour
 
     public static void InitThridLevel()
     {
+        passFromOrigin = true;
+        passFromDoor = false;
+        passFromWindow = false;
+
         nwDoor_n = 0;
         nwDoor_m = 0;
 
