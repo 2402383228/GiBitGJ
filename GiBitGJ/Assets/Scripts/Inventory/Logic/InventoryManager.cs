@@ -24,5 +24,16 @@ public class InventoryManager : Singleton<InventoryManager>
         }
     }
 
+    void Start()
+    {
+        Instance.itemData.GetItemDetails(ItemName.OldKey).isGet = true;
+    }
+
+    void OnDisable()
+    {
+        Instance.itemData.GetItemDetails(ItemName.Bracelet).isGet = false;
+        Instance.itemData.GetItemDetails(ItemName.Photo).isGet = false;
+        Instance.itemData.GetItemDetails(ItemName.Hairpin).isGet = false;
+    }
 
 }
