@@ -45,7 +45,7 @@ public class BedController : MonoBehaviour
         else if (NowsDay == 3)
         {
             int sumOfElevatorAbled = 0;
-            for (int i = 0; i < LevelToLevelData.elevatorAbled.Length; i++)
+            for (int i = 1; i < LevelToLevelData.elevatorAbled.Length; i++)
             {
                 if (LevelToLevelData.elevatorAbled[i])
                 {
@@ -53,7 +53,7 @@ public class BedController : MonoBehaviour
                 }
             }
 
-            if (sumOfElevatorAbled == 8)
+            if (sumOfElevatorAbled >= 8)
             {
                 GetComponent<SpriteRenderer>().sprite = bedWithRedLight;
             }
