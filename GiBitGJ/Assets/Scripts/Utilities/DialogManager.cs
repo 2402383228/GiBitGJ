@@ -142,6 +142,12 @@ public class DialogManager : MonoBehaviour
             dialogIndex++;
             namePanel.SetActive(false);
         }
+        else if (operation == "ShutMusic")
+        {
+            AudioManger.Instance.backgroundMusicSource.Pause();
+            dialogIndex++;
+            nextButton.gameObject.SetActive(true);
+        }
     }
 
     public void ShowSelection()
