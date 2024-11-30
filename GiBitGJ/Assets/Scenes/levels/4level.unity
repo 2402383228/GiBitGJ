@@ -38,7 +38,6 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -536,7 +535,7 @@ MonoBehaviour:
   currentLevel: 4level
   doorLeftOrRight: 0
   doorOrder: 2
-  playerPerfab: {fileID: 3773385964617320516, guid: f23e93a3214e046478c487d63fc4363e, type: 3}
+  playerPerfab: {fileID: 8514269114835819183, guid: 06dcfcf5116451846a38f9954868863d, type: 3}
 --- !u!1 &104577631
 GameObject:
   m_ObjectHideFlags: 0
@@ -567,7 +566,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentLevel: 4level
-  playerPerfab: {fileID: 3773385964617320516, guid: f23e93a3214e046478c487d63fc4363e, type: 3}
+  playerPerfab: {fileID: 8514269114835819183, guid: 06dcfcf5116451846a38f9954868863d, type: 3}
 --- !u!4 &104577633
 Transform:
   m_ObjectHideFlags: 0
@@ -1562,7 +1561,7 @@ MonoBehaviour:
   currentLevel: 4level
   windowOnOrUnder: 1
   windowOrder: 3
-  playerPerfab: {fileID: 3773385964617320516, guid: f23e93a3214e046478c487d63fc4363e, type: 3}
+  playerPerfab: {fileID: 8514269114835819183, guid: 06dcfcf5116451846a38f9954868863d, type: 3}
 --- !u!1 &581533382
 GameObject:
   m_ObjectHideFlags: 0
@@ -4079,7 +4078,7 @@ MonoBehaviour:
   currentLevel: 4level
   doorLeftOrRight: 0
   doorOrder: 1
-  playerPerfab: {fileID: 3773385964617320516, guid: f23e93a3214e046478c487d63fc4363e, type: 3}
+  playerPerfab: {fileID: 8514269114835819183, guid: 06dcfcf5116451846a38f9954868863d, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

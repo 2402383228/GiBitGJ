@@ -628,7 +628,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentLevel: 0level
-  playerPerfab: {fileID: 3773385964617320516, guid: f23e93a3214e046478c487d63fc4363e, type: 3}
+  playerPerfab: {fileID: 8514269114835819183, guid: 06dcfcf5116451846a38f9954868863d, type: 3}
 --- !u!4 &948322509
 Transform:
   m_ObjectHideFlags: 0
@@ -691,7 +691,7 @@ MonoBehaviour:
   currentLevel: 0level
   windowOnOrUnder: 1
   windowOrder: 2
-  playerPerfab: {fileID: 3773385964617320516, guid: f23e93a3214e046478c487d63fc4363e, type: 3}
+  playerPerfab: {fileID: 8514269114835819183, guid: 06dcfcf5116451846a38f9954868863d, type: 3}
 --- !u!1 &1049413202
 GameObject:
   m_ObjectHideFlags: 0

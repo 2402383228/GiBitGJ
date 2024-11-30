@@ -24,7 +24,7 @@ public class NewPlayerJumpState : NewPlayerState
     {
         base.Update();
         
-        if(player.isGroundDetected())
+        if(player.isGroundDetected() && rb.velocity.y < 0f)
         {
             stateMachine.ChangeState(player.idleState);
         }

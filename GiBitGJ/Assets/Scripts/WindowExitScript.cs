@@ -130,7 +130,7 @@ public class WindowExitScript : MonoBehaviour
         if (!canPass)
             return;
 
-        if (collision.GetComponent<PlayerController>() != null)
+        if (collision.CompareTag("PlayerSelf"))
         {
             Debug.Log("Collision detected");
 
