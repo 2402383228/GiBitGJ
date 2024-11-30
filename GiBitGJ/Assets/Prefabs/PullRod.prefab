@@ -143,8 +143,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e31bacc0e9d3e549a603ac3a1c32e73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PullRod: {fileID: 21300000, guid: 842ec09cdca4a044cb51659dd6f9c4f6, type: 3}
-  PullRodNULL: {fileID: 21300000, guid: 0adc940c26177414181a1536e2526b18, type: 3}
+  PullRod: {fileID: 21300000, guid: 38c05136e6908d3459ab0bcac95e828d, type: 3}
+  PullRodNULL: {fileID: 21300000, guid: 1fd1788869cfe8a44bfb732cfd8e8877, type: 3}
   PullRodOrder: 1
   num1: 8
   num2: 0

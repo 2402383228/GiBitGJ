@@ -29,6 +29,9 @@ public class WindowExitScript : MonoBehaviour
         if (!LevelToLevelData.elevatorAbled[elevatorOrder])
         {
             GetComponent<SpriteRenderer>().sprite = lockedWindow;
+            //将门的颜色设置为白色
+            gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
+
             return;
         }
 
