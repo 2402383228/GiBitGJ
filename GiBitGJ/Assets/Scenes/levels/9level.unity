@@ -2009,7 +2009,7 @@ MonoBehaviour:
   minHeight: -3.12
   isuping: 1
   iswaiting: 1
-  moveSpeed: 1
+  moveSpeed: 2
 --- !u!1 &683465079
 GameObject:
   m_ObjectHideFlags: 0
@@ -3424,6 +3424,10 @@ PrefabInstance:
       propertyPath: minHeight
       value: -3.12
       objectReference: {fileID: 0}
+    - target: {fileID: 8425696092609529920, guid: 15f4495dd3b1ef147b141c6c1db11202, type: 3}
+      propertyPath: moveSpeed
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4449,6 +4453,10 @@ PrefabInstance:
     - target: {fileID: 8425696092609529920, guid: 15f4495dd3b1ef147b141c6c1db11202, type: 3}
       propertyPath: minHeight
       value: -3.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 8425696092609529920, guid: 15f4495dd3b1ef147b141c6c1db11202, type: 3}
+      propertyPath: moveSpeed
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

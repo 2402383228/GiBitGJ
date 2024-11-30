@@ -3712,6 +3712,10 @@ PrefabInstance:
       propertyPath: minHeight
       value: -3.13
       objectReference: {fileID: 0}
+    - target: {fileID: 8425696092609529920, guid: 15f4495dd3b1ef147b141c6c1db11202, type: 3}
+      propertyPath: moveSpeed
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

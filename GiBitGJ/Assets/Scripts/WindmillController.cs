@@ -66,7 +66,7 @@ public class WindmillController : MonoBehaviour
         }
         else if (isPlayerInTrigger && !hasE && LevelToLevelData.windmillHasBeenTouch[WindmillOrder])
         {
-            playerText.text = "这个风车已经被解开了";
+            playerText.text = "这个风车已经被点亮了";
         }
 
         if (!isPlayerInTrigger)
@@ -82,13 +82,13 @@ public class WindmillController : MonoBehaviour
 
             if(LevelToLevelData.windmillSum == 4)
             {
-                playerText.text = "所有风车已经被解开，但似乎还藏着一个谜题";
+                playerText.text = "所有风车已经被点亮，但似乎还藏着一个谜题";
 
                 StartCoroutine(DelayedTextClear(2f));
             }
             else if(LevelToLevelData.windmillSum < 4)
             {
-                playerText.text = "风车被解开了";
+                playerText.text = "风车被点亮了";
 
                 StartCoroutine(DelayedTextClear(2f));
             }
