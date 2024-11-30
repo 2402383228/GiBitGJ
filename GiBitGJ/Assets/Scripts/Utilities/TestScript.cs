@@ -4,29 +4,17 @@ using UnityEngine;
 
 public class TestScript : MonoBehaviour
 {
+    public int day;
     void Start()
     {
-        Gamemaneger.DayInGame = 1;
+        Gamemaneger.DayInGame = day;
 
-        /*
-        InventoryManager.Instance.AddItem(ItemName.Bracelet);
-        InventoryManager.Instance.AddItem(ItemName.Photo);
-        InventoryManager.Instance.AddItem(ItemName.Hairpin);
-        InventoryManager.Instance.AddItem(ItemName.OldKey);
-        */
-    }
+        if (day == 2) LevelToLevelData.InitsecondLevel();
+        if (day == 3) LevelToLevelData.InitThridLevel();
 
-    void Update()
-    {
-        //Debug.Log(Gamemaneger.DayInGame);
-    }
-
-    void OnDisable()
-    {   /*
-        InventoryManager.Instance.itemData.GetItemDetails(ItemName.Bracelet).isGet = false;
-        InventoryManager.Instance.itemData.GetItemDetails(ItemName.Photo).isGet = false;
-        InventoryManager.Instance.itemData.GetItemDetails(ItemName.Hairpin).isGet = false;
-        InventoryManager.Instance.itemData.GetItemDetails(ItemName.OldKey).isGet = false;
-        */
+        if (day > 1) InventoryManager.Instance.AddItem(ItemName.Bracelet);
+        if (day > 1) InventoryManager.Instance.AddItem(ItemName.Photo);
+        if (day > 2) InventoryManager.Instance.AddItem(ItemName.Hairpin);
+        if (day > 1) InventoryManager.Instance.AddItem(ItemName.OldKey);
     }
 }
