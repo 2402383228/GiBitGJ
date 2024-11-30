@@ -15,6 +15,7 @@ public class NewPlayer : Entity
     public NewPlayerIdleState idleState { get; private set; }
     public NewPlayerMoveState moveState { get; private set; }
     public NewPlayerJumpState jumpState { get; private set; }
+    public NewPlayerActiveState activeState { get; private set; }
 
     #endregion
 
@@ -26,7 +27,8 @@ public class NewPlayer : Entity
 
         idleState = new NewPlayerIdleState(this, stateMachine, "Idle");
         moveState = new NewPlayerMoveState(this, stateMachine, "Move");
-        jumpState = new NewPlayerJumpState(this, stateMachine, "Jump");
+        //jumpState = new NewPlayerJumpState(this, stateMachine, "Jump");
+        activeState = new NewPlayerActiveState(this, stateMachine, "Active");
     }
 
     protected override void Start()
