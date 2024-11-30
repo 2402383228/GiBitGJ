@@ -12,6 +12,7 @@ TagManager:
   - GoBackDreamScene
   - New tag
   - PlayerSelf
+  - Wall
   layers:
   - Default
   - TransparentFX

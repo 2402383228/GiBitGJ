@@ -87,10 +87,10 @@ public class BedController : MonoBehaviour
             }
             else if(NowsDay == 3)
             {
-                //InventoryManager.Instance.itemData.GetItemDetails(ItemName.Hairpin).isGet;
-
                 //TODO:通向ed结局（hd结局为4，ed结局是5）
                 Gamemaneger.DayInGame = 5;
+
+                TransitionManager.Instance.Transition("1level", "BE");
             }
         }
     }
