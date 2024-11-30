@@ -10,6 +10,10 @@ public class KeyController : MonoBehaviour
         if (collision.tag == "PlayerSelf" && Input.GetKeyDown(KeyCode.E) && !LevelToLevelData.hasKey)
         {
             LevelToLevelData.hasKey = true;
+            InventoryManager.Instance.AddItem(ItemName.OldKey);
+
+            InventoryManager.Instance.itemData.GetItemDetails(ItemName.OldKey).isGet = true;
+
             key.SetActive(false);
         }
     }

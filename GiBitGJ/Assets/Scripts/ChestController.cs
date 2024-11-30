@@ -23,6 +23,9 @@ public class ChestController : MonoBehaviour
         if (collision.tag == "PlayerSelf" && Input.GetKeyDown(KeyCode.E) && LevelToLevelData.hasKey && !LevelToLevelData.chestHasBeenOpened)
         {
             LevelToLevelData.chestHasBeenOpened = true;
+
+            InventoryManager.Instance.AddItem(ItemName.Photo);
+
             GetComponent<SpriteRenderer>().sprite = chestOpened;
         }
     }

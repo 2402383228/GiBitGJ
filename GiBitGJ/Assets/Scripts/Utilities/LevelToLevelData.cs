@@ -205,7 +205,7 @@ public class LevelToLevelData : MonoBehaviour
 
         #endregion
 
-        InitThridLevel();
+        InitfirstLevel();
     }
 
     public static bool IsDoorOpened(string level, int direction, int door)

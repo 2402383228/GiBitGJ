@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.Experimental.GraphView;
+using UnityEditorInternal;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -15,6 +16,8 @@ public class BedController : MonoBehaviour
 
     void Start()
     {
+        NowsDay = Gamemaneger.DayInGame;
+         
         if(NowsDay == 1)
         {
             if (LevelToLevelData.chestHasBeenOpened)
@@ -68,16 +71,28 @@ public class BedController : MonoBehaviour
         {
             if(NowsDay == 1)
             {
+                Gamemaneger.DayInGame = 2;
 
+                LevelToLevelData.InitsecondLevel();
+
+                TransitionManager.Instance.Transition("1level", "DialogScene");
             }
             else if(NowsDay == 2)
             {
+                Gamemaneger.DayInGame = 3;
 
+                LevelToLevelData.InitThridLevel();
+
+                TransitionManager.Instance.Transition("1level", "DialogScene");
             }
             else if(NowsDay == 3)
             {
+                //InventoryManager.Instance.itemData.GetItemDetails(ItemName.Hairpin).isGet;
 
+                //TODO:通向ed结局（hd结局为4，ed结局是5）
+                Gamemaneger.DayInGame = 5;
             }
         }
     }
 }
+

@@ -82,6 +82,9 @@ public class WindmillController : MonoBehaviour
             else if(LevelToLevelData.windmillSum == 4)
             {
                 GetComponent<SpriteRenderer>().sprite = Windmill4;
+
+                //解开风车谜题获得发簪
+                InventoryManager.Instance.AddItem(ItemName.Hairpin);
             }
 
             if (LevelToLevelData.windmillHasBeenTouch[WindmillOrder])
