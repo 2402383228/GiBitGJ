@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class TheLightToHdScript : MonoBehaviour
 {
@@ -9,11 +10,11 @@ public class TheLightToHdScript : MonoBehaviour
     {
         if(InventoryManager.Instance.itemData.GetItemDetails(ItemName.Hairpin).isGet)
         {
-            GetComponent<SpriteRenderer>().sprite = Light;
+            GetComponent<Image>().sprite = Light;
         }
         else
         {
-            GetComponent<SpriteRenderer>().sprite = null;
+            GetComponent<Image>().sprite = null;
         }
     }
 }

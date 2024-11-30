@@ -337,11 +337,35 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5837741332645929776, guid: f985d6765f58a4c4289166a487d8ae80, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6876388653132602257, guid: f985d6765f58a4c4289166a487d8ae80, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 604962998}
   m_SourcePrefab: {fileID: 100100000, guid: f985d6765f58a4c4289166a487d8ae80, type: 3}
+--- !u!1 &604962997 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6876388653132602257, guid: f985d6765f58a4c4289166a487d8ae80, type: 3}
+  m_PrefabInstance: {fileID: 604962996}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &604962998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 604962997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed44ffb801bd813479b098ac4495d1f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bed: {fileID: 21300000, guid: f17d394095fd8164e8a4f901b4db6d78, type: 3}
+  bedWithYellowLight: {fileID: 21300000, guid: 75b6095d7d865e04286004e1e483ee99, type: 3}
+  bedWithRedLight: {fileID: 21300000, guid: a4211c04b0429a64a93c3bdb88a5f6d0, type: 3}
 --- !u!1 &631305709
 GameObject:
   m_ObjectHideFlags: 0
