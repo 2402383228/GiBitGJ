@@ -24,6 +24,6 @@ public class SelectionManager : MonoBehaviour
 
     public void PlayButtonSound()
     {
-        AudioManger.Instance.PlaySoundEffect();
+        AudioManger.Instance.PlayButtonSound();
     }
 }

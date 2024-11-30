@@ -8,7 +8,8 @@ public class AudioManger : Singleton<AudioManger>
     public AudioSource backgroundMusicSource;
     public AudioSource sfxSource;
     public AudioClip[] backgroundMusicClip;
-    public AudioClip soundEffects;
+    public AudioClip buttonSound;
+    public AudioClip[] soundEffects;
 
     public void PlayBackgroundMusic(int index)
     {
@@ -17,8 +18,13 @@ public class AudioManger : Singleton<AudioManger>
         backgroundMusicSource.Play();
     }
 
-    public void PlaySoundEffect()
+    public void PlayButtonSound()
     {
-        sfxSource.PlayOneShot(soundEffects);
+        sfxSource.PlayOneShot(buttonSound);
+    }
+
+    public void PlaySound(int index)
+    {
+        sfxSource.PlayOneShot(soundEffects[index]);
     }
 }
