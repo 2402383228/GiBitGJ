@@ -179,7 +179,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -3
+  m_SortingOrder: -5
   m_Sprite: {fileID: 21300000, guid: 5900a4d79fd2dea4aba851ec76f644b9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -3873,6 +3873,10 @@ PrefabInstance:
     - target: {fileID: 2041920867593316095, guid: 39427b943c960de47ad3ccbd1ee8935a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4460814711089251360, guid: 39427b943c960de47ad3ccbd1ee8935a, type: 3}
+      propertyPath: m_SortingOrder
+      value: -3
       objectReference: {fileID: 0}
     - target: {fileID: 7054607671710092954, guid: 39427b943c960de47ad3ccbd1ee8935a, type: 3}
       propertyPath: m_Name
