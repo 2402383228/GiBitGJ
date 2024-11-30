@@ -80,7 +80,7 @@ public class BedController_toproom : MonoBehaviour
                 //TODO:通向ed结局（hd结局为4，ed结局是5）
                 Gamemaneger.DayInGame = 4;
 
-                TransitionManager.Instance.Transition("0level", "HE");
+                TransitionManager.Instance.Transition("0level", "DialogScene");
             }
 
         }
