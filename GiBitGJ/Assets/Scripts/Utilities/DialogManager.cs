@@ -13,6 +13,7 @@ public class DialogManager : MonoBehaviour
 
     public Teleport teleport;
     public Canvas canvas;
+    public TMP_Text dayText;
     public ItemManager itemManager;
     public SelectionManager selectionManager;
     public TextAsset dialogDataFile;
@@ -37,6 +38,7 @@ public class DialogManager : MonoBehaviour
 
     void Start()
     {
+        UpdateDay();
         PlayMusic();
         index.UpdateDialogIndex();
         dialogIndex = index.CalculateDialogIndex();
@@ -61,6 +63,10 @@ public class DialogManager : MonoBehaviour
         canvas.gameObject.SetActive(false);
     }
 
+    public void UpdateDay()
+    {
+        dayText.text = "Day " + Gamemaneger.DayInGame.ToString();
+    }
 
     public void UpdateText(string _name, string _text)
     {
