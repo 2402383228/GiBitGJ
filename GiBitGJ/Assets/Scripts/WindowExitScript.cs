@@ -28,9 +28,9 @@ public class WindowExitScript : MonoBehaviour
         //特判是否和电梯锁在一起
         if (!LevelToLevelData.elevatorAbled[elevatorOrder])
         {
-            GetComponent<SpriteRenderer>().sprite = lockedWindow;
-            //将门的颜色设置为白色
-            gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
+            //GetComponent<SpriteRenderer>().sprite = lockedWindow;
+            // 将门的颜色设置为透明
+            gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0);
 
             return;
         }
