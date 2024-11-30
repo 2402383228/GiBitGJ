@@ -14,10 +14,19 @@ public class KeyController : MonoBehaviour
     private void Start()
     {
         playerText = GetComponentInChildren<TMP_Text>();
+        if(LevelToLevelData.hasKey)
+        {
+            key.SetActive(false);
+        }
     }
 
     private void Update()
     {
+        if(LevelToLevelData.hasKey)
+        {
+            return;
+        }
+
         if (isPlayerInTrigger && !hasE)
         {
             playerText.text = "按E进行交互\n一把老旧的钥匙，脑中闪过了一张看不清人脸的合影";
