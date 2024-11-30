@@ -1,20 +1,32 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
+using UnityEngine.UI;
 
 public class TheLightToHdScript : MonoBehaviour
 {
     [SerializeField] private Sprite Light;
+    public Image image;
+
     void Start()
     {
-        if(InventoryManager.Instance.itemData.GetItemDetails(ItemName.Hairpin).isGet)
+        image = GetComponent<Image>();
+
+        if (image != null)
         {
-            GetComponent<Image>().sprite = Light;
+            if (InventoryManager.Instance.itemData.GetItemDetails(ItemName.Hairpin).isGet)
+            {
+                image.sprite = Light;
+            }
+            else
+            {
+                image.sprite = null;
+                image.color = new Color(0, 0, 0, 0); // …Ë÷√Õº∆¨Õ∏√˜
+            }
         }
         else
         {
-            GetComponent<Image>().sprite = null;
+            Debug.Log("Image is null");
         }
     }
 }
