@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class DoorExitScript : MonoBehaviour
@@ -17,8 +18,15 @@ public class DoorExitScript : MonoBehaviour
     private string nextLevel;
     private bool canPass = false;
 
+    private bool isPlayerInTrigger = false;
+    private bool hasE = false;
+    private TMP_Text playerText;
+
     private void Start()
     {
+        //
+        playerText = GetComponentInChildren<TMP_Text>();
+
         int levelPosition = LevelToLevelData.levelToNum[currentLevel];
 
         //n 是行，m 是列
@@ -89,14 +97,33 @@ public class DoorExitScript : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        if(isPlayerInTrigger && !canPass)
+        {
+            playerText.text = "这个门似乎通往一片黑暗，也许我应该为自己打开一条通往别处的门。";
+        }
+        else
+        {
+            playerText.text = "";
+        }
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (collision.CompareTag("PlayerSelf"))
+        {
+            isPlayerInTrigger = true;
+        }
+
         if (!canPass)
             return;
 
         if (collision.CompareTag("PlayerSelf"))
         {
             Debug.Log("Collision detected");
+
+            AudioManger.Instance.PlaySound(5);
 
             LevelToLevelData.nowLevel = nextLevel;
 
@@ -112,5 +139,21 @@ public class DoorExitScript : MonoBehaviour
 
             TransitionManager.Instance.Transition(currentLevel, nextLevel);
         }
+    }
+
+    private void OnTriggerExit2D(Collider2D _collision)
+    {
+        if (_collision.CompareTag("PlayerSelf"))
+        {
+            isPlayerInTrigger = false;
+        }
+    }
+
+    private IEnumerator DelayedTextClear(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        playerText.text = "";
+
+        hasE = false;
     }
 }

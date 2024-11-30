@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
 
 public class LevelToLevelData : MonoBehaviour
@@ -358,5 +359,12 @@ public class LevelToLevelData : MonoBehaviour
         boolArray[9] = true;
         boolArray[2] = true;
     }
+
     #endregion
+
+    public static IEnumerator ExampleCoroutine()
+    {
+        //生成一个等待5秒的yield指令。
+        yield return new WaitForSeconds(1);
+    }
 }

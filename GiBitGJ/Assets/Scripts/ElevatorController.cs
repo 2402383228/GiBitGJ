@@ -13,6 +13,8 @@ public class ElevatorController : MonoBehaviour
 
     public float moveSpeed;
 
+    private bool hasPlayAudio = false;
+
     void Update()
     {
         move();
@@ -22,6 +24,12 @@ public class ElevatorController : MonoBehaviour
     {
         if(iswaiting)
             return;
+
+        if(!hasPlayAudio)
+        {
+            hasPlayAudio = true;
+            AudioManger.Instance.PlaySound(3);
+        }
 
         // Move the elevator
         transform.Translate((isuping ? Vector2.up : Vector2.down) * moveSpeed * Time.deltaTime);
@@ -35,6 +43,8 @@ public class ElevatorController : MonoBehaviour
         {
             isuping = true;
             iswaiting = true;
+
+            hasPlayAudio = false;
         }
     }
 
