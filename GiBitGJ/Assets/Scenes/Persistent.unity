@@ -1467,7 +1467,14 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 1bb3af3204d60284db9cca8751e6fc19, type: 3}
   - {fileID: 8300000, guid: 6a4093a8ae0a6f04f81714e723631209, type: 3}
   - {fileID: 8300000, guid: 1cca0593e53a3524fb622c6b8af25874, type: 3}
-  soundEffects: {fileID: 8300000, guid: f211d18fbf4a3dc4b801493bc521957a, type: 3}
+  buttonSound: {fileID: 8300000, guid: 79a6744374f5bbd4086ec56fa7f983f7, type: 3}
+  soundEffects:
+  - {fileID: 8300000, guid: 6612468187d15754aa80b813bf8639d5, type: 3}
+  - {fileID: 8300000, guid: b07d219caaa12104caeaa73b2e2785ac, type: 3}
+  - {fileID: 8300000, guid: a96c9596be5935b4bb1fd0fc8fe9da3f, type: 3}
+  - {fileID: 8300000, guid: 0b05261a015988e45af7b7b0d5288030, type: 3}
+  - {fileID: 8300000, guid: 8ff6a0e421839de45955146ac945db33, type: 3}
+  - {fileID: 8300000, guid: 5c5629fba34ded84387916aa31612640, type: 3}
 --- !u!4 &1154229663
 Transform:
   m_ObjectHideFlags: 0
