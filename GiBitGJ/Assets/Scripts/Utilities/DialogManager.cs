@@ -37,6 +37,7 @@ public class DialogManager : MonoBehaviour
 
     void Start()
     {
+        PlayMusic();
         index.UpdateDialogIndex();
         dialogIndex = index.CalculateDialogIndex();
         Debug.Log(dialogIndex);
@@ -171,6 +172,11 @@ public class DialogManager : MonoBehaviour
     {
         CloseSelection();
         ShowOverDialog();
+    }
+
+    public void PlayMusic()
+    {
+        AudioManger.Instance.PlayBackgroundMusic(1);
     }
 }
 

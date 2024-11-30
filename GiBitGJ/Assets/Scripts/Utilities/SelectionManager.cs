@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Profiling.LowLevel.Unsafe;
 using UnityEngine;
 
 public class SelectionManager : MonoBehaviour
@@ -18,6 +19,11 @@ public class SelectionManager : MonoBehaviour
 
     public void CloseCanvas()
     {
-        canvas.gameObject.SetActive(false); 
+        canvas.gameObject.SetActive(false);
+    }
+
+    public void PlayButtonSound()
+    {
+        AudioManger.Instance.PlaySoundEffect();
     }
 }
