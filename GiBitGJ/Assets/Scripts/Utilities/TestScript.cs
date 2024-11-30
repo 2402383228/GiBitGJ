@@ -6,12 +6,15 @@ public class TestScript : MonoBehaviour
 {
     void Start()
     {
-        Gamemaneger.DayInGame = 3;
-        Gamemaneger.isDialogFinished[1] = true;
-        Gamemaneger.isDialogFinished[2] = true;
-        Gamemaneger.isDialogFinished[3] = true;
+        Gamemaneger.DayInGame = 1;
         InventoryManager.Instance.AddItem(ItemName.Bracelet);
         InventoryManager.Instance.AddItem(ItemName.Photo);
         InventoryManager.Instance.AddItem(ItemName.Hairpin);
+        InventoryManager.Instance.AddItem(ItemName.OldKey);
+    }
+
+    void Update()
+    {
+        Debug.Log(Gamemaneger.DayInGame);
     }
 }

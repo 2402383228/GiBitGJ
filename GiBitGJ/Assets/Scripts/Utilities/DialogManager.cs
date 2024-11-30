@@ -33,16 +33,13 @@ public class DialogManager : MonoBehaviour
         imageDic["小唐"] = sprites[0];
         imageDic["我"] = sprites[1];
         index = new DialogIndex();
-        index.UpdateDialogIndex();
     }
 
-
-    void OnEnable()
-    {
-        dialogIndex = index.CalculateDialogIndex();
-    }
     void Start()
     {
+        index.UpdateDialogIndex();
+        dialogIndex = index.CalculateDialogIndex();
+        Debug.Log(dialogIndex);
         ShowCanvas();
         ReadText(dialogDataFile);
         ShowDialogRow();
@@ -175,7 +172,7 @@ public class DialogManager : MonoBehaviour
 
 public class DialogIndex
 {
-    public int day => Gamemaneger.DayInGame;
+    public int day;
     public int start;
     public int selection;
     public int bracelet;
@@ -185,8 +182,10 @@ public class DialogIndex
 
     public void UpdateDialogIndex()
     {
+        day = Gamemaneger.DayInGame;
         if (day == 1)
         {
+            Debug.Log("first");
             start = 1;
             selection = 17;
             bracelet = 18;
@@ -194,7 +193,8 @@ public class DialogIndex
         }
         else if (day == 2)
         {
-            start = 38;
+            Debug.Log("second");
+            start = 41;
             selection = 74;
             bracelet = 75;
             photo = 86;

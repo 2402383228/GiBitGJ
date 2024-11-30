@@ -1,4 +1,4 @@
 public enum ItemName
 {
-    None, Bracelet, Photo, Hairpin
+    None, Bracelet, Photo, Hairpin, OldKey
 }
