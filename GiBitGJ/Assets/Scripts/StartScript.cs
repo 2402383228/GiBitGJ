@@ -6,11 +6,11 @@ using UnityEngine.SceneManagement;
 
 public class StartScript : MonoBehaviour
 {
-        void Start()
-        {
-            // ╪стьH1Ё║╬╟
-            SceneManager.LoadScene("StartScene", LoadSceneMode.Additive);
-        }
+    void Start()
+    {
+        // О©╫О©╫О©╫О©╫H1О©╫О©╫О©╫О©╫
+        SceneManager.LoadScene("StartScene", LoadSceneMode.Additive);
+    }
 
 
 }

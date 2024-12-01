@@ -8,9 +8,9 @@ public class TestScript : MonoBehaviour
     void Start()
     {
         Gamemaneger.DayInGame = day;
-
-        if (day == 2) LevelToLevelData.InitsecondLevel();
-        if (day == 3) LevelToLevelData.InitThridLevel();
+        if (day >= 1) LevelToLevelData.InitfirstLevel();
+        if (day >= 2) LevelToLevelData.InitsecondLevel();
+        if (day >= 3) LevelToLevelData.InitThridLevel();
 
         if (day > 1) InventoryManager.Instance.AddItem(ItemName.Bracelet);
         if (day > 1) InventoryManager.Instance.AddItem(ItemName.Photo);
