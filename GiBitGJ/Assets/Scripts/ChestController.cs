@@ -41,7 +41,13 @@ public class ChestController : MonoBehaviour
         {
             hasE = true;
 
-            if (LevelToLevelData.hasKey && !LevelToLevelData.chestHasBeenOpened)
+            if (!LevelToLevelData.hasKey)
+            {
+                playerText.text = "即使在梦境 我也无法打开一个上锁的箱子。";
+
+                StartCoroutine(DelayedTextClear(2f));
+            }
+            else if (LevelToLevelData.hasKey && !LevelToLevelData.chestHasBeenOpened)
             {
                 AudioManger.Instance.PlaySound(3);
 
@@ -62,6 +68,7 @@ public class ChestController : MonoBehaviour
 
                 StartCoroutine(DelayedTextClear(2f));
             }
+            
         }
     }
 

@@ -1,19 +1,34 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.Assertions.Must;
+using UnityEngine.UI;
 
 public class MusicPlayer : MonoBehaviour
 {
-    public string musicMod;
+    public TMP_Text endText;
+    public string Mod;
+    public float WaitForSeconds;
+    EndScript endScript;
+    void Awake()
+    {
+        endScript = GetComponent<EndScript>();
+    }
+
     void Start()
     {
-        if (musicMod == "BE")
+        endScript.Mod = "None";
+        endText.gameObject.SetActive(false);
+        if (Mod == "BE")
         {
             PlayBEMusic();
+            Invoke(nameof(BEEND), WaitForSeconds);
         }
-        else if (musicMod == "HE")
+        else if (Mod == "HE")
         {
             PlayHEMusic();
+            Invoke(nameof(HEEND), WaitForSeconds);
         }
     }
 
@@ -25,5 +40,17 @@ public class MusicPlayer : MonoBehaviour
     void PlayHEMusic()
     {
         AudioManger.Instance.PlayBackgroundMusic(4);
+    }
+
+    void BEEND()
+    {
+        endText.gameObject.SetActive(true);
+        endScript.Mod = "BE";
+    }
+
+    void HEEND()
+    {
+        endText.gameObject.SetActive(true);
+        endScript.Mod = "HE";
     }
 }

@@ -1440,6 +1440,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4460814711089251360, guid: 39427b943c960de47ad3ccbd1ee8935a, type: 3}
+      propertyPath: m_SortingOrder
+      value: -3
+      objectReference: {fileID: 0}
     - target: {fileID: 7054607671710092954, guid: 39427b943c960de47ad3ccbd1ee8935a, type: 3}
       propertyPath: m_Name
       value: "\u94A2\u7F06 (2)"
@@ -2984,7 +2988,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -3
+  m_SortingOrder: -5
   m_Sprite: {fileID: 21300000, guid: 778e67ad8858b9147a9f8b17eabd28f8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
