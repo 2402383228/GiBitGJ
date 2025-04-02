@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4287205765812318581}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: GroundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 6763895484976282476}
   - component: {fileID: 3731268920032407188}
   - component: {fileID: 4981260449753093266}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Shadowtest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -140,7 +140,7 @@ GameObject:
   - component: {fileID: 7866870708479809733}
   - component: {fileID: 8888476388553810898}
   - component: {fileID: 3350642128187732281}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Animator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -260,7 +260,7 @@ GameObject:
   - component: {fileID: 7638359338725176041}
   - component: {fileID: 3806568769509938482}
   - component: {fileID: 3420953691277673059}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Player 1
   m_TagString: PlayerSelf
   m_Icon: {fileID: 0}
