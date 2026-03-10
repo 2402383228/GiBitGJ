@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+[DefaultExecutionOrder(-100)]
 public class TransitionManager : Singleton<TransitionManager>
 {
     public CanvasGroup fadeCanvasGroup;
@@ -24,7 +25,7 @@ public class TransitionManager : Singleton<TransitionManager>
         yield return SceneManager.UnloadSceneAsync(from);
         yield return SceneManager.LoadSceneAsync(to, LoadSceneMode.Additive);
 
-        //ÉèÖÃÐÂ³¡¾°Îª¼¤»î³¡¾°
+        //ï¿½ï¿½ï¿½ï¿½ï¿½Â³ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½î³¡ï¿½ï¿½
         Scene newScene = SceneManager.GetSceneAt(SceneManager.sceneCount - 1);
         SceneManager.SetActiveScene(newScene);
 
@@ -33,9 +34,9 @@ public class TransitionManager : Singleton<TransitionManager>
     }
 
     /// <summary>
-    /// ×ª³¡½¥±äº¯Êý
+    /// ×ªï¿½ï¿½ï¿½ï¿½ï¿½äº¯ï¿½ï¿½
     /// </summary>
-    /// <param name="targetAlpha">1ÊÇ´¿ºÚ£¬0ÊÇÍ¸Ã÷</param>
+    /// <param name="targetAlpha">1ï¿½Ç´ï¿½ï¿½Ú£ï¿½0ï¿½ï¿½Í¸ï¿½ï¿½</param>
     /// <returns></returns>
     private IEnumerator Fade(float targetAlpha)
     {

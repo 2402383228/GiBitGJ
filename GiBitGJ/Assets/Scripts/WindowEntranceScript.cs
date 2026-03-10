@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[DefaultExecutionOrder(-90)]
 public class WindowEntranceScript : MonoBehaviour
 {
     public string currentLevel;
@@ -12,6 +13,7 @@ public class WindowEntranceScript : MonoBehaviour
 
     [Space]
     public GameObject playerPerfab;
+    
     private void Start()
     {
         if (LevelToLevelData.nowLevel == currentLevel && LevelToLevelData.nwWindow_n == windowOnOrUnder && LevelToLevelData.nwWindow_m == windowOrder && LevelToLevelData.passFromWindow)
